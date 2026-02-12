@@ -1,0 +1,186 @@
+<section id="directorio">
+    <div class="container">
+        <h2>Liderazgo Regional</h2>
+        <p class="bajada"></p>
+
+        <div class="seccion-lideres">
+            <h3 class="titulo-seccion">Pastores Asesores</h3>
+            <div class="grid-pastores">
+                
+                <div class="lider-card pastor-card">
+                    <div class="foto-circle">
+                        <img src="/images/pastor-asesor.jpg" alt="Pastor Asesor">
+                    </div>
+                    <h4>Pr. David Trigo</h4>
+                    <p class="cargo">Pastor Asesor</p>
+                    <p class="iglesia">Iglesia de Curacaví</p>
+                </div>
+
+                <div class="lider-card pastor-card">
+                    <div class="foto-circle">
+                        <img src="/images/pastora-asesora.jpg" alt="Pastora Asesora">
+                    </div>
+                    <h4>Pra. Johanna Sánchez</h4>
+                    <p class="cargo">Pastora Asesora</p>
+                    <p class="iglesia">Iglesia de Renca</p>
+                </div>
+
+            </div>
+        </div>
+
+        <hr class="divisor">
+
+        <div class="seccion-lideres">
+            <h3 class="titulo-seccion">Directorio Regional</h3>
+            <div class="grid-jovenes">
+                
+                <div class="lider-card">
+                    <div class="foto-circle">
+                        <img src="/images/jefe.jpg" alt="Coordinacion">
+                    </div>
+                    <h4>Hno. Matías Sarmiento</h4>
+                    <p class="cargo">Coordinador Regional</p>
+                    <p class="iglesia">Iglesia de Renca</p>
+                </div>
+
+                <div class="lider-card">
+                    <div class="foto-circle">
+                        <img src="/images/secretaria.jpg" alt="SubCoordinacion">
+                    </div>
+                    <h4>Hno. Nicolás Orellana</h4>
+                    <p class="cargo">SubCoordinador Regional</p>
+                    <p class="iglesia">Iglesia de La Florida</p>
+                </div>
+
+                <div class="lider-card">
+                    <div class="foto-circle">
+                        <img src="/images/tesorero.jpg" alt="Secretaría">
+                    </div>
+                    <h4>Hna. Jael Rubio</h4>
+                    <p class="cargo">Secretaria</p>
+                    <p class="iglesia">Iglesia de [Comuna]</p>
+                </div>
+
+                <div class="lider-card">
+                    <div class="foto-circle">
+                        <img src="/images/ayudante.jpg" alt="Tesorería">
+                    </div>
+                    <h4>Hna. Aline Valenzuela</h4>
+                    <p class="cargo">Tesorera</p>
+                    <p class="iglesia">Iglesia de [Comuna]</p>
+                </div>
+
+                <div class="lider-card">
+                    <div class="foto-circle">
+                        <img src="/images/ayudante.jpg" alt="Ayudante">
+                    </div>
+                    <h4>Hno. Esteban Astorga</h4>
+                    <p class="cargo">Coordinador de Departamentos</p>
+                    <p class="iglesia">Iglesia de Maipú</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    #directorio {
+        padding: 80px 20px;
+        background-color: #f9fafb;
+        text-align: center;
+    }
+
+    h2 { font-size: 2.5rem; color: #111827; margin-bottom: 10px; }
+    .bajada { color: #6b7280; margin-bottom: 50px; font-style: italic; }
+
+    /* ESTILOS DE LOS TÍTULOS DE SECCIÓN */
+    .titulo-seccion {
+        font-size: 1.8rem;
+        color: #374151;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 10px;
+    }
+
+    /* GRID ESPECIAL PARA PASTORES (Centrado y más grande) */
+    .grid-pastores {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+
+    /* GRID PARA JÓVENES */
+    .grid-jovenes {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* TARJETA GENÉRICA */
+    .lider-card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        width: 260px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+        border: 1px solid transparent;
+    }
+
+    .lider-card:hover { 
+        transform: translateY(-10px); 
+        border-color: #bfdbfe; /* Borde azulito al pasar el mouse */
+    }
+
+    /* TARJETA DE PASTOR (Un poco más destacada) */
+    .pastor-card {
+        border-top: 5px solid #2563eb; /* Línea azul arriba */
+        width: 280px; /* Un poco más ancha */
+    }
+
+    .foto-circle {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px auto;
+        border: 4px solid #f3f4f6;
+    }
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+
+    h4 { font-size: 1.3rem; color: #1f2937; margin-bottom: 5px; }
+    
+    .cargo { 
+        color: #2563eb; 
+        font-weight: bold; 
+        text-transform: uppercase; 
+        font-size: 0.9rem; 
+        margin-bottom: 5px;
+    }
+
+    .iglesia {
+        color: #9ca3af;
+        font-size: 0.9rem;
+    }
+
+    /* LÍNEA DIVISORIA */
+    .divisor {
+        border: 0;
+        height: 1px;
+        background: #e5e7eb;
+        margin: 50px auto;
+        max-width: 600px;
+    }
+
+    /* RESPONSIVE */

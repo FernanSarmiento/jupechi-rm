@@ -1,0 +1,68 @@
+<section id="eventos">
+    <h2>Próximos Eventos</h2>
+    <div class="timeline">
+        
+        <div class="evento-item">
+            <div class="fecha">
+                <span class="dia">15</span>
+                <span class="mes">MAR</span>
+            </div>
+            <div class="info">
+                <h3>Vigilia Regional</h3>
+                <p>📍 Iglesia de Maipú - 22:00 hrs</p>
+                <p class="detalle">Una noche de oración y búsqueda del Espíritu Santo.</p>
+            </div>
+        </div>
+
+        <div class="evento-item">
+            <div class="fecha">
+                <span class="dia">02</span>
+                <span class="mes">ABR</span>
+            </div>
+            <div class="info">
+                <h3>Servicio de Juventud</h3>
+                <p>📍 Iglesia de Santiago Centro - 19:30 hrs</p>
+                <p class="detalle">Culto especial coordinado por RRPP.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    #eventos { padding: 80px 20px; background-color: #1f2937; color: white; text-align: center; }
+    h2 { margin-bottom: 50px; font-size: 2.5rem; }
+
+    .timeline { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+    .evento-item {
+        display: flex;
+        background: rgba(255,255,255,0.1);
+        border-radius: 12px;
+        padding: 20px;
+        align-items: center;
+        text-align: left;
+        transition: transform 0.2s;
+    }
+    .evento-item:hover { transform: scale(1.02); background: rgba(255,255,255,0.15); }
+
+    .fecha {
+        background: #2563eb;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        min-width: 70px;
+        margin-right: 20px;
+    }
+    .dia { display: block; font-size: 1.8rem; font-weight: bold; line-height: 1; }
+    .mes { display: block; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; }
+
+    .info h3 { margin: 0 0 5px 0; font-size: 1.4rem; color: white; }
+    .info p { margin: 0; color: #d1d5db; font-size: 1rem; }
+    .info .detalle { font-size: 0.9rem; color: #9ca3af; margin-top: 5px; }
+
+    @media (max-width: 600px) {
+        .evento-item { flex-direction: column; text-align: center; }
+        .fecha { margin-right: 0; margin-bottom: 15px; width: 100%; }
+    }
+</style>

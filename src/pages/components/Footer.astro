@@ -1,0 +1,135 @@
+<footer>
+    <div class="footer-container">
+        
+        <div class="columna">
+            <h3>JUPECHI RM</h3>
+            <p>Juventud Pentecostal de Chile, Región Metropolitana.</p>
+        </div>
+
+        <div class="columna">
+            <h3>Secciones</h3>
+            <ul class="links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#eventos">📅 Próximos Eventos</a></li>
+                <li><a href="#directorio">👥 Directorio</a></li>
+                <li><a href="#departamentos">📢 Departamentos</a></li>
+            </ul>
+        </div>
+
+        <div class="columna">
+            <h3>Contacto Regional</h3>
+            <p class="dato">📍 Región Metropolitana, Chile</p>
+            <p class="dato">📱 +56 9 1234 5678</p>
+            <p class="dato">✉️ rm.jupechi@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="barra-final">
+        <p>&copy; 2026 Juventud Pentecostal de Chile - RM.</p>
+        <p class="dev">
+            Desarrollado con <span class="corazon">❤</span> por 
+            <a href="https://github.com/fernansarmiento" target="_blank">Fernando Sarmiento Cortez</a>
+        </p>
+    </div>
+</footer>
+
+<style>
+    /* MISMOS ESTILOS ELEGANTES QUE YA TENÍAS */
+    footer {
+        background-color: #111827; 
+        color: #d1d5db;
+        padding-top: 60px;
+        font-size: 0.95rem;
+    }
+
+    .footer-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #374151;
+    }
+
+    .columna {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    h3 {
+        color: white;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    p {
+        line-height: 1.6;
+        color: #9ca3af;
+    }
+
+    .links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .links li { margin-bottom: 10px; }
+
+    .links a {
+        color: #d1d5db;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .links a:hover {
+        color: skyblue;
+        padding-left: 5px;
+    }
+
+    .dato {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .barra-final {
+        background-color: #0f172a;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: #6b7280;
+    }
+
+    .barra-final p { margin: 5px 0; }
+
+    .dev a {
+        color: #9ca3af;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .dev a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .corazon { color: #ef4444; }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .links a:hover { padding-left: 0; }
+        
+        /* Centrar los datos de contacto en celular */
+        .dato { justify-content: center; }
+    }
+</style>

@@ -1,0 +1,131 @@
+<section id="contacto">
+  <div class="contenedor-contacto">
+    
+    <h2>Contáctanos</h2>
+    <div class="datos-grid">
+      
+      <div class="dato-item">
+        <div class="icon">📱</div>
+        <h3>WhatsApp</h3>
+        <p>+56 9 1234 5678</p>
+        <a href="https://wa.me/56912345678" target="_blank" class="btn-whatsapp">
+          Hablar ahora
+        </a>
+      </div>
+
+      <div class="dato-item">
+        <div class="icon">✉️</div>
+        <h3>Correo</h3>
+        <p>rm.jupechi@gmail.com</p>
+        <a href="mailto:rm.jupechi@gmail.com" class="link-correo">
+          Enviar correo
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #contacto {
+    padding: 80px 20px;
+    background-color: #1f2937; /* Fondo oscuro elegante */
+    color: white;
+    text-align: center; /* Todo centrado */
+  }
+
+  .contenedor-contacto {
+    max-width: 800px; /* Más angosto para que se vea ordenado */
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+  }
+
+  .bajada {
+    color: #9ca3af; /* Gris claro */
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    line-height: 1.6;
+  }
+
+  /* LA GRILLA DE CONTACTOS */
+  .datos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Para que baje en celular */
+  }
+
+  .dato-item {
+    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente sutil */
+    padding: 30px;
+    border-radius: 16px;
+    flex: 1; /* Que ambos ocupen el mismo ancho */
+    min-width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .dato-item:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    margin-bottom: 25px;
+  }
+
+  /* BOTÓN WHATSAPP */
+  .btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #1ebc57;
+  }
+
+  /* LINK CORREO */
+  .link-correo {
+    color: #9ca3af;
+    text-decoration: underline;
+    font-size: 0.9rem;
+  }
+
+  .link-correo:hover {
+    color: white;
+  }
+
+  /* CELULAR */
+  @media (max-width: 600px) {
+    .datos-grid {
+      flex-direction: column;
+    }
+  }
+</style>

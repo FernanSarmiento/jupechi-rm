@@ -1,0 +1,63 @@
+<nav class="nav-links">
+    <div class="links">
+        <a href="/">Inicio</a>
+        <a href="#directorio">Directorio</a>
+        <a href="#departamentos">Departamentos</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#noticias">Redes y Noticias</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+</nav>
+
+<style>
+    nav {
+        background-color: transparent; /* Fondo invisible */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        
+        /* CORREGIDO: Padding normal para que no se aplaste */
+        padding: 20px 5%; 
+        box-sizing: border-box; /* Importante para que respete el ancho */
+
+        display: flex;
+        justify-content: center; /* Centrado en pantallas grandes */
+        align-items: center;
+    }
+
+    .links {
+        display: flex;
+        gap: 30px; /* Separación entre enlaces */
+        flex-wrap: wrap; /* Permite que bajen si no caben */
+        justify-content: center;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para leer mejor sobre la foto */
+    }
+
+    .links a:hover {
+        color: skyblue;
+    }
+
+    /* RESPONSIVE: AJUSTE PARA CELULARES */
+    @media (max-width: 768px) {
+        nav {
+            padding: 15px; /* Menos espacio en celular */
+            position: relative; /* En celular, que no flote sobre la foto para no tapar */
+            background-color: #1f2937; /* Fondo oscuro en celular para que se lea */
+        }
+        
+        .links {
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+    }
+</style>
