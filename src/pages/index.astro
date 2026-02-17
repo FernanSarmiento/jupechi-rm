@@ -6,13 +6,13 @@ import Contacto from "./components/Contacto.astro";
 import Directorio from "./components/Directorio.astro";
 import Departamentos from "./components/Departamentos.astro";
 import Eventos from "./components/Eventos.astro";
+import Postulaciones from "./components/Postulaciones.astro";
 ---
 
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="images/logo rm.png" />
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +64,7 @@ import Eventos from "./components/Eventos.astro";
 
         <Directorio />
         <Departamentos />
+        <Postulaciones />
         <Eventos />
         <Noticias />
         <Contacto />
@@ -219,7 +220,7 @@ import Eventos from "./components/Eventos.astro";
     /* INDICADOR DE SCROLL */
     .scroll-down {
         position: absolute;
-        bottom: 30px;
+        bottom: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;

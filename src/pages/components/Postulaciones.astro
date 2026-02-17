@@ -1,0 +1,165 @@
+---
+/* Postulaciones.astro */
+---
+<section id="postulaciones">
+    <div class="container">
+        
+        <div class="cta-card">
+            <div class="glow-effect"></div>
+            
+            <div class="content">
+                <span class="badge">Próximamente</span>
+                <h2>¿Quieres servir con nosotros?</h2>
+                <p class="fechas">Las postulaciones para los departamentos abren en:</p>
+                <div class="meses">
+                    <span class="mes">MARZO</span>
+                    <span class="separador">-</span>
+                    <span class="mes">ABRIL</span>
+                </div>
+                <p class="bajada">Si tienes el deseo de trabajar para el Señor en la región, prepárate. ¡Pronto liberaremos el formulario!</p>
+                
+                <a href="#" class="btn-postular disabled">
+                    <span>Atento a las Redes</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    section {
+        padding: 4rem 1rem;
+        background-color: transparent;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* TARJETA PRINCIPAL */
+    .cta-card {
+        background-color: #0f172a; /* Fondo oscuro */
+        border: 2px solid #22d3ee; /* Borde Cyan Brillante */
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 40px rgba(34, 211, 238, 0.15); /* Resplandor suave */
+    }
+
+    /* EFECTO DE FONDO (Glow) */
+    .glow-effect {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+        animation: rotate 10s linear infinite;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* ETIQUETA "PRÓXIMAMENTE" */
+    .badge {
+        background-color: rgba(34, 211, 238, 0.1);
+        color: #22d3ee;
+        border: 1px solid #22d3ee;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        color: #ffffff !important;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    .fechas {
+        font-size: 1.2rem;
+        color: #94a3b8;
+        margin: 0;
+    }
+
+    /* MESES DESTACADOS */
+    .meses {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #22d3ee;
+        text-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+    }
+
+    .separador { color: #475569; }
+
+    .bajada {
+        max-width: 600px;
+        font-size: 1.1rem;
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    /* BOTÓN */
+    .btn-postular {
+        margin-top: 1rem;
+        background-color: #22d3ee;
+        color: #0f172a;
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Estado "Deshabilitado" (Para cuando aún no hay link) */
+    .btn-postular.disabled {
+        background-color: #334155;
+        color: #94a3b8;
+        cursor: not-allowed;
+    }
+
+    /* Si quieres activar el botón, quítale la clase 'disabled' y usa esto: */
+    /*
+    .btn-postular:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.5);
+    }
+    */
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    /* CELULAR */
+    @media (max-width: 768px) {
+        .cta-card { padding: 2rem 1rem; }
+        h2 { font-size: 1.8rem; }
+        .meses { font-size: 1.8rem; flex-direction: column; gap: 0; }
+        .separador { display: none; }
+    }
+</style>

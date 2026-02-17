@@ -1,3 +1,6 @@
+---
+/* Departamentos.astro */
+---
 <section id="departamentos">
   <div class="container">
     
@@ -8,17 +11,17 @@
 
     <div class="grid-deptos">
 
-      <div class="depto-card" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80');">
-        <div class="overlay"></div>
+      <div class="depto-card">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80" alt="Comunicaciones" class="fondo-img">
         <div class="content">
           <div class="icono">📸</div>
           <h3>Comunicaciones</h3>
-          <p>Difusión del Evangelio y cobertura digital en redes</p>
+          <p>Difusión del Evangelio y RRSS</p>
         </div>
       </div>
 
-      <div class="depto-card" style="background-image: url('/public/images/deptos/danza.jpg');">
-        <div class="overlay"></div>
+      <div class="depto-card">
+        <img src="/images/deptos/danza.jpg" alt="Danza" class="fondo-img">
         <div class="content">
           <div class="icono">💃</div>
           <h3>Danza</h3>
@@ -26,218 +29,160 @@
         </div>
       </div>
 
-      <div class="depto-card" style="background-image: url('/public/images/deptos/protocolo.jpg');">
-        <div class="overlay"></div>
+      <div class="depto-card">
+        <img src="/images/deptos/protocolo.jpg" alt="Protocolo" class="fondo-img">
         <div class="content">
           <div class="icono">👔</div>
           <h3>Protocolo</h3>
-          <p>Recepción, orden y excelencia en cada servicio</p>
+          <p>Recepción, orden y excelencia</p>
         </div>
       </div>
 
-      <div class="depto-card" style="background-image: url('/public/images/deptos/teatro.jpg');">
-        <div class="overlay"></div>
+      <div class="depto-card">
+        <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80" alt="Visitadores" class="fondo-img">
         <div class="content">
-          <div class="icono">🎭</div>
-          <h3>Teatro</h3>
-          <p>Evangelismo a través de las artes</p>
+          <div class="icono">❤️</div>
+          <h3>Visitadores</h3>
+          <p>Amor, compañía y oración a cada casa</p>
         </div>
       </div>
 
-      <div class="depto-card" style="background-image: url('/public/images/deptos/capaz.jpg');">
-        <div class="overlay"></div>
+      <div class="depto-card">
+        <img src="/images/deptos/capaz.jpg" alt="Capacitación" class="fondo-img">
         <div class="content">
           <div class="icono">📖</div>
           <h3>Capacitación</h3>
-          <p>Fundamento bíblico y enseñanza de la Palabra.</p>
+          <p>Fundamento bíblico y enseñanza</p>
         </div>
       </div>
 
-      <div class="depto-card" style="background-image: url('/public/images/deptos/conjunto.jpg');">
-        <div class="overlay"></div>
+      <div class="depto-card">
+        <img src="/images/deptos/conjunto.jpg" alt="Conjunto" class="fondo-img">
         <div class="content">
           <div class="icono">🎵</div>
           <h3>Conjunto Musical</h3>
-          <p>Guiando a la congregación en alabanza y adoración</p>
+          <p>Guiando en alabanza y adoración</p>
         </div>
       </div>
 
-      <div class="depto-card" style="background-image: url('/public/images/deptos/evangelismo.jpg');">
-        <div class="overlay"></div>
+      <div class="depto-card">
+        <img src="/images/deptos/evangelismo.jpg" alt="Evangelismo" class="fondo-img">
         <div class="content">
           <div class="icono">🔥</div>
           <h3>Evangelismo</h3>
-          <p>Llevando el mensaje de salvación y esperanza a las calles</p>
+          <p>Llevando el mensaje de salvación</p>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 <style>
-  /* 1. SECCIÓN */
-  section {
-    padding: 4rem 1rem;
-    background-color: transparent; 
-  }
+  /* ESTILOS BASE */
+  section { padding: 4rem 1rem; background-color: transparent; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  
+  .titulo-seccion { text-align: center; margin-bottom: 3rem; }
+  .titulo-seccion h2 { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; color: #22d3ee !important; text-shadow: 0 0 20px rgba(34, 211, 238, 0.3); }
+  .titulo-seccion p { color: #a1a1aa; font-size: 1.1rem; }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  /* TÍTULOS */
-  .titulo-seccion {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .titulo-seccion h2 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    color: #22d3ee !important; 
-    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
-  }
-
-  .titulo-seccion p {
-    color: #a1a1aa;
-    font-size: 1.1rem;
-  }
-
-  /* 2. GRILLA */
+  /* GRILLA */
   .grid-deptos {
     display: grid;
-    /* Mínimo 250px para que quepan bien las columnas */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     justify-content: center;
   }
 
-  /* 3. TARJETAS (ESTILO PC) */
+  /* TARJETA BASE */
   .depto-card {
     position: relative;
-    height: 350px; /* Altura equilibrada para PC */
+    height: 350px;
     border-radius: 16px;
-    overflow: hidden;
-    background-color: #0f172a;
+    overflow: hidden; /* Esto recorta la imagen si se sale */
+    background-color: #0f172a; /* Fondo azul oscuro por defecto */
     border: 1px solid #008C9E;
     box-shadow: 0 4px 20px rgba(0, 140, 158, 0.15);
     transition: all 0.4s ease;
   }
 
-  .depto-card::before {
-    content: '';
+  .fondo-img {
     position: absolute;
-    inset: 0;
-    /* Hereda la imagen definida en el HTML */
-    background-image: inherit; 
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s ease;
-    filter: brightness(0.5); 
-    z-index: 0;
-  }
-
-  .depto-card:hover {
-    transform: translateY(-5px);
-    border-color: #22d3ee;
-    box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
-  }
-
-  .depto-card:hover::before {
-    transform: scale(1.05);
-    filter: brightness(0.3);
-  }
-
-  /* 4. CONTENIDO */
-  .content {
-    position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box;
+    height: 100%;
+    
+    object-fit: cover; 
+    
+    z-index: 0;
+    filter: brightness(0.6);
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+
+  /* HOVER PC */
+  .depto-card:hover { transform: translateY(-5px); border-color: #22d3ee; box-shadow: 0 0 25px rgba(34, 211, 238, 0.4); }
+  
+  .depto-card:hover .fondo-img { transform: scale(1.05); filter: brightness(0.4); }
+
+  /* CONTENIDO */
+  .content {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
     padding: 1.5rem;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
     background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 20%, transparent 100%);
   }
 
-  .icono {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6));
-  }
+  .icono { font-size: 2.5rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6)); }
+  h3 { font-size: 1.6rem; font-weight: 700; color: #22d3ee !important; margin: 0; text-transform: uppercase; }
+  p { font-size: 0.95rem; color: #e4e4e7; margin: 0; }
 
-  h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #22d3ee !important;
-    margin: 0;
-    text-transform: uppercase;
-  }
-
-  p {
-    font-size: 0.95rem;
-    color: #e4e4e7;
-    margin: 0;
-  }
-
-  /* --- ARREGLO PARA CELULARES --- */
   @media (max-width: 768px) {
+
+    .titulo-seccion h2 {
+        font-size: 2.5rem !important;
+        line-height: 1.1;
+        word-wrap: break-word; 
+    }
     
     .grid-deptos {
-        /* Una sola columna en el celular */
+        grid-template-columns: 1fr !important;
+    }
+    
+    .grid-deptos {
         grid-template-columns: 1fr !important;
         padding: 0 10px;
         gap: 1.5rem;
     }
 
     .depto-card {
-        /* Altura fija reducida para evitar zoom excesivo */
-        height: 220px !important; 
+        height: 300px !important; 
     }
 
-    .depto-card::before {
-        /* Centrar la imagen normalmente */
-        background-position: center center !important;
-        background-size: cover !important;
+    .fondo-img {
+        height: auto !important; 
+        
+        width: 100% !important;
+        
+        /* Pegada arriba */
+        top: 0 !important;
+        
+        object-fit: contain !important;
+        object-position: top center !important;
+        
+        filter: brightness(0.9) !important;
     }
 
-    /* Ajuste de texto para espacio reducido */
+    /* CONTENIDO */
     .content {
         padding: 1rem !important;
-        flex-direction: row; /* Icono al lado para ahorrar espacio vertical */
-        align-items: center;
-        gap: 1rem;
-        background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 40%, transparent 100%);
+        background: linear-gradient(to top, #0f172a 40%, transparent 100%) !important;
     }
 
-    .icono {
-        font-size: 2rem;
-        margin-bottom: 0;
-    }
-
-    .textos {
-        text-align: left;
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.2rem;
-    }
-
-    p {
-        font-size: 0.85rem;
-        line-height: 1.2;
-        /* Limita el texto a 2 líneas para que no tape la foto */
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+    h3 { font-size: 1.4rem; }
+    p { font-size: 0.9rem; }
   }
 </style>
