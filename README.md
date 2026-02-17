@@ -1,43 +1,62 @@
-# Astro Starter Kit: Minimal
+# 🚀 Jupechi RM - Sitio Web Oficial
 
-```sh
-npm create astro@latest -- --template minimal
-```
+> **Juventud Pentecostal de Chile - Región Metropolitana**
+> _"Conectados con el Propósito"_
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este repositorio contiene el código fuente del sitio web oficial de la **Jupechi RM**. Una plataforma moderna, rápida y responsiva diseñada para conectar a la juventud, informar sobre eventos y presentar a los departamentos regionales.
 
-## 🚀 Project Structure
+## 🎨 Diseño & Estilo
+El sitio ha sido renovado con una identidad visual **"Dark Tech"**:
+* **Paleta de Colores:** Fondo Zinc Oscuro (`#0f172a`) con acentos en Cyan Neón (`#22d3ee`).
+* **Interfaz:** Tarjetas con efectos "Glassmorphism", brillos al hover y tipografía moderna (*Outfit*).
+* **Enfoque:** Mobile-First (Optimizado para celulares).
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tecnologías Usadas
+Este proyecto está construido con **Astro**, priorizando el rendimiento y la entrega de HTML estático.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+* **[Astro](https://astro.build/):** Framework principal.
+* **HTML5 & CSS3:** Estilos personalizados, CSS Grid y Flexbox.
+* **JavaScript:** Interactividad mínima y optimizada.
+* **Responsive Design:** Ajustes específicos para móviles (imágenes, grillas y tipografía).
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 📂 Estructura del Proyecto
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+El sitio se divide en componentes modulares para facilitar el mantenimiento:
 
-Any static assets, like images, can be placed in the `public/` directory.
+* **Hero:** Portada con impacto visual y accesos rápidos.
+* **Directorio:** Presentación del liderazgo regional (Pastores asesores y Directiva).
+* **Departamentos:** Grilla interactiva mostrando las áreas de trabajo (Comunicaciones, Danza, Protocolo, etc.).
+* **Postulaciones:** Banner "Call to Action" para convocatorias (Marzo/Abril).
+* **Eventos:** Timeline de próximas actividades.
+* **Noticias:** Integración con feeds de Facebook y YouTube.
+* **Contacto:** Accesos directos a WhatsApp y Correo.
 
-## 🧞 Commands
+## 🚀 Instalación y Uso Local
 
-All commands are run from the root of the project, from a terminal:
+Si quieres correr este proyecto en tu computador:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone [https://github.com/fernansarmiento/jupechi-rm.git](https://github.com/fernansarmiento/jupechi-rm.git)
+    cd jupechi-rm
+    ```
 
-## 👀 Want to learn more?
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+    Visita `http://localhost:4321` en tu navegador.
+
+## 📸 Capturas / Componentes Destacados
+
+* **Grid de Departamentos:** Tarjetas con imágenes que se adaptan perfectamente a dispositivos móviles sin recortes extraños.
+* **Footer Tech:** Pie de página con enlaces rápidos y redes sociales integradas.
+
+---
+
+Desarrollado con ❤️ por **[Fernando Sarmiento](https://github.com/fernansarmiento)** para la Juventud Pentecostal de Chile.
