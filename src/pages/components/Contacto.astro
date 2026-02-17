@@ -1,24 +1,31 @@
+---
+/* Contacto.astro */
+---
 <section id="contacto">
   <div class="contenedor-contacto">
     
-    <h2>Contáctanos</h2>
+    <div class="titulo-seccion">
+        <h2>Contáctanos</h2>
+        <p></p>
+    </div>
+
     <div class="datos-grid">
       
-      <div class="dato-item">
-        <div class="icon">📱</div>
+      <div class="dato-item whatsapp-card">
+        <div class="icon-glow">📱</div>
         <h3>WhatsApp</h3>
         <p>+56 9 1234 5678</p>
-        <a href="https://wa.me/56912345678" target="_blank" class="btn-whatsapp">
-          Hablar ahora
+        <a href="https://wa.me/56912345678" target="_blank" class="btn-tech whatsapp">
+          Hablar Ahora &rarr;
         </a>
       </div>
 
-      <div class="dato-item">
-        <div class="icon">✉️</div>
+      <div class="dato-item correo-card">
+        <div class="icon-glow">✉️</div>
         <h3>Correo</h3>
         <p>rm.jupechi@gmail.com</p>
-        <a href="mailto:rm.jupechi@gmail.com" class="link-correo">
-          Enviar correo
+        <a href="mailto:rm.jupechi@gmail.com" class="btn-tech correo">
+          Enviar Mensaje &rarr;
         </a>
       </div>
 
@@ -28,104 +35,144 @@
 </section>
 
 <style>
+  /* 1. SECCIÓN */
   #contacto {
-    padding: 80px 20px;
-    background-color: #1f2937; /* Fondo oscuro elegante */
-    color: white;
-    text-align: center; /* Todo centrado */
+    padding: 6rem 1rem;
+    background-color: transparent; /* Dejamos ver el fondo global */
+    text-align: center;
   }
 
   .contenedor-contacto {
-    max-width: 800px; /* Más angosto para que se vea ordenado */
+    max-width: 900px;
     margin: 0 auto;
   }
 
+  /* 2. TÍTULOS */
+  .titulo-seccion {
+    margin-bottom: 4rem;
+  }
+
   h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #fff;
+    font-size: 3rem;
+    color: #22d3ee !important; /* Cyan Brillante */
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
   }
 
-  .bajada {
-    color: #9ca3af; /* Gris claro */
+  .titulo-seccion p {
+    color: #a1a1aa;
     font-size: 1.2rem;
-    margin-bottom: 60px;
-    line-height: 1.6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
-  /* LA GRILLA DE CONTACTOS */
+  /* 3. GRILLA */
   .datos-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap; /* Para que baje en celular */
+    gap: 2rem;
+    flex-wrap: wrap; /* Para bajar en celular */
   }
 
+  /* 4. TARJETAS "TECH" */
   .dato-item {
-    background: rgba(255, 255, 255, 0.05); /* Fondo semitransparente sutil */
-    padding: 30px;
-    border-radius: 16px;
-    flex: 1; /* Que ambos ocupen el mismo ancho */
-    min-width: 250px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #27272a; /* Zinc 800 */
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    
+    border: 1px solid #008C9E; /* Borde Cyan base */
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efecto Hover: Tarjeta flota y brilla */
+  .dato-item:hover {
+    transform: translateY(-8px);
+    border-color: #22d3ee;
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+  }
+
+  /* ICONOS */
+  .icon-glow {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
     transition: transform 0.3s ease;
   }
 
-  .dato-item:hover {
-    transform: translateY(-5px); /* Se levanta un poco */
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+  .dato-item:hover .icon-glow {
+    transform: scale(1.1); /* El icono crece un poco */
   }
 
   h3 {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #ffffff !important;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 700;
   }
 
   p {
     font-size: 1.1rem;
-    color: #d1d5db;
-    margin-bottom: 25px;
+    color: #d1d5db; /* Gris claro */
+    margin-bottom: 2rem;
   }
 
-  /* BOTÓN WHATSAPP */
-  .btn-whatsapp {
+  /* 5. BOTONES TECH */
+  .btn-tech {
     display: inline-block;
-    background-color: #25D366;
-    color: white;
-    padding: 10px 25px;
+    padding: 12px 30px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-
-  .btn-whatsapp:hover {
-    background-color: #1ebc57;
-  }
-
-  /* LINK CORREO */
-  .link-correo {
-    color: #9ca3af;
-    text-decoration: underline;
+    font-weight: 700;
+    text-transform: uppercase;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
   }
 
-  .link-correo:hover {
-    color: white;
+  /* Estilo WhatsApp (Verde Neón) */
+  .whatsapp {
+    background-color: transparent;
+    border: 2px solid #25D366;
+    color: #25D366;
   }
 
-  /* CELULAR */
+  .whatsapp:hover {
+    background-color: #25D366;
+    color: #052e16; /* Texto oscuro para contraste */
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); /* Glow Verde */
+  }
+
+  /* Estilo Correo (Cyan) */
+  .correo {
+    background-color: transparent;
+    border: 2px solid #22d3ee;
+    color: #22d3ee;
+  }
+
+  .correo:hover {
+    background-color: #22d3ee;
+    color: #0f172a; /* Texto oscuro */
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.5); /* Glow Cyan */
+  }
+
+  /* RESPONSIVE */
   @media (max-width: 600px) {
     .datos-grid {
       flex-direction: column;
+      align-items: center;
+    }
+    
+    .dato-item {
+        width: 100%; /* Ocupa todo el ancho en el celular */
+        box-sizing: border-box;
     }
   }
 </style>

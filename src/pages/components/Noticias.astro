@@ -1,71 +1,172 @@
+---
+/* Noticias.astro */
+---
 <section id="noticias">
-    <h2>Redes Sociales</h2>
-    
-    <div class="media-grid">
-        <div class="facebook-feed">
-            <h3>📢 Últimas Noticias</h3>
-            <div class="iframe-container">
-                <iframe 
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fjupechirm&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                    width="340" 
-                    height="500" 
-                    style="border:none;overflow:hidden" 
-                    scrolling="no" 
-                    frameborder="0" 
-                    allowfullscreen="true" 
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                </iframe>
-            </div>
-            <p class="nota-pie">Síguenos en Facebook para ver fotos y eventos en tiempo real.</p>
+    <div class="container">
+        
+        <div class="titulo-seccion">
+            <h2>Conectados</h2>
+            <p>Nuestras Redes Sociales</p>
         </div>
+        
+        <div class="media-grid">
+            
+            <div class="social-card facebook-feed">
+                <div class="card-header">
+                    <span class="icon">📢</span>
+                    <h3>Últimas Noticias</h3>
+                </div>
+                
+                <div class="iframe-container">
+                    <iframe 
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fjupechirm&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                        width="340" 
+                        height="500" 
+                        style="border:none;overflow:hidden" 
+                        scrolling="no" 
+                        frameborder="0" 
+                        allowfullscreen="true" 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+                <p class="nota-pie">Síguenos en Facebook para ver fotos y eventos en tiempo real.</p>
+            </div>
 
-        <div class="youtube-feed">
-            <h3>🎥 Último Mensaje</h3>
-            <div class="video-wrapper">
-                <iframe 
-                    width="100%" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/qGkwoI-DCl0?si=2Umv8Z0tMczjywFd" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
+            <div class="social-card youtube-feed">
+                <div class="card-header">
+                    <span class="icon">🎥</span>
+                    <h3>Último Mensaje</h3>
+                </div>
+
+                <div class="video-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/qGkwoI-DCl0?si=2Umv8Z0tMczjywFd" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="btn-container">
+                    <a href="https://www.youtube.com/@ipechirenca/featured" target="_blank" class="btn-tech-youtube">
+                        Ver Canal Completo &rarr;
+                    </a>
+                </div>
             </div>
-            <div class="btn-container">
-                <a href="https://www.youtube.com/@ipechirenca/featured" target="_blank" class="btn-youtube">
-                    Ver canal completo
-                </a>
-            </div>
+
         </div>
-
     </div>
 </section>
 
 <style>
-    #noticias { padding: 60px 20px; background-color: #fff; text-align: center; }
-    h2 { font-size: 2.5rem; color: #111827; margin-bottom: 50px; }
-    
-    .media-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 40px;
+    /* 1. SECCIÓN */
+    #noticias { 
+        padding: 6rem 1rem; 
+        background-color: transparent; 
+    }
+
+    .container {
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    .facebook-feed, .youtube-feed {
-        flex: 1;
-        min-width: 300px; /* Ancho mínimo para que no se aplaste */
-        max-width: 500px; 
+    /* 2. TÍTULOS */
+    .titulo-seccion {
+        text-align: center;
+        margin-bottom: 4rem;
     }
 
-    /* FACEBOOK */
-    .facebook-feed { background: #f0f2f5; padding: 20px; border-radius: 12px; }
-    .iframe-container { background: white; border-radius: 8px; overflow: hidden; display: flex; justify-content: center; }
+    h2 { 
+        font-size: 3rem; 
+        color: #22d3ee !important; /* Cyan Brillante */
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
+
+    .titulo-seccion p {
+        color: #a1a1aa;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
     
-    /* YOUTUBE */
+    /* 3. GRILLA */
+    .media-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    /* 4. TARJETAS "TECH" */
+    .social-card {
+        flex: 1;
+        min-width: 320px;
+        max-width: 500px;
+        
+        /* Estilo Tech */
+        background-color: #27272a; /* Zinc 800 */
+        border: 1px solid #008C9E; /* Borde Cyan base */
+        border-radius: 16px;
+        padding: 2rem;
+        position: relative;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Efecto Hover: Brillo Neón */
+    .social-card:hover {
+        transform: translateY(-5px);
+        border-color: #22d3ee;
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+    }
+
+    /* CABECERA DE TARJETA */
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #3f3f46;
+        padding-bottom: 1rem;
+    }
+
+    .card-header h3 {
+        margin: 0;
+        color: #ffffff !important;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .icon {
+        font-size: 1.8rem;
+    }
+
+    /* CONTENEDOR FACEBOOK */
+    .iframe-container { 
+        background: white; 
+        border-radius: 8px; 
+        overflow: hidden; 
+        display: flex; 
+        justify-content: center;
+        /* Un borde interno sutil */
+        border: 4px solid #3f3f46; 
+    }
+    
+    .nota-pie {
+        color: #9ca3af;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        text-align: center;
+        font-style: italic;
+    }
+
+    /* CONTENEDOR YOUTUBE */
     .video-wrapper {
         position: relative;
         padding-bottom: 56.25%; /* Ratio 16:9 */
@@ -73,27 +174,45 @@
         overflow: hidden;
         border-radius: 12px;
         background: #000;
-        margin-bottom: 20px;
+        margin-bottom: 1.5rem;
+        border: 1px solid #3f3f46;
     }
-    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     
-    .btn-youtube {
+    .video-wrapper iframe { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+    }
+    
+    /* BOTÓN YOUTUBE ESTILO TECH */
+    .btn-container {
+        text-align: center;
+    }
+
+    .btn-tech-youtube {
         display: inline-block;
-        background-color: #ef4444;
-        color: white;
-        padding: 10px 20px;
+        background-color: transparent;
+        color: #ef4444; /* Rojo Youtube */
+        border: 2px solid #ef4444;
+        padding: 10px 25px;
         border-radius: 50px;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        letter-spacing: 1px;
     }
 
-    /* Regla de oro para evitar desbordes */
+    .btn-tech-youtube:hover {
+        background-color: #ef4444;
+        color: white;
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); /* Glow Rojo */
+        transform: scale(1.05);
+    }
+
+    /* Regla de seguridad */
     iframe { max-width: 100%; }
-
-    h2{
-        font-size: 2.5rem;
-        color: #1e3a8a;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-    }
 </style>

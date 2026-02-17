@@ -67,18 +67,18 @@
         <div class="content">
           <div class="icono">🔥</div>
           <h3>Evangelismo</h3>
-          <p>levando el mensaje de salvación y esperanza a las calles</p>
+          <p>Llevando el mensaje de salvación y esperanza a las calles</p>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-
 <style>
+  /* 1. SECCIÓN */
   section {
     padding: 4rem 1rem;
-    background-color: #f9fafb;
+    background-color: transparent; 
   }
 
   .container {
@@ -86,92 +86,158 @@
     margin: 0 auto;
   }
 
+  /* TÍTULOS */
   .titulo-seccion {
     text-align: center;
     margin-bottom: 3rem;
   }
 
   .titulo-seccion h2 {
-    font-size: 2.5rem;
-    color: #1e3a8a;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: #22d3ee !important; 
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
   }
 
-  /* GRILLA */
+  .titulo-seccion p {
+    color: #a1a1aa;
+    font-size: 1.1rem;
+  }
+
+  /* 2. GRILLA */
   .grid-deptos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    /* Mínimo 250px para que quepan bien las columnas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
     justify-content: center;
   }
 
-  /* TARJETAS */
+  /* 3. TARJETAS (ESTILO PC) */
   .depto-card {
-    position: relative; /* Necesario para que lo de adentro se pegue a los bordes */
-    height: 450px;
+    position: relative;
+    height: 350px; /* Altura equilibrada para PC */
     border-radius: 16px;
     overflow: hidden;
+    background-color: #0f172a;
+    border: 1px solid #008C9E;
+    box-shadow: 0 4px 20px rgba(0, 140, 158, 0.15);
+    transition: all 0.4s ease;
+  }
+
+  .depto-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Hereda la imagen definida en el HTML */
+    background-image: inherit; 
     background-size: cover;
     background-position: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
+    filter: brightness(0.5); 
+    z-index: 0;
   }
 
   .depto-card:hover {
     transform: translateY(-5px);
+    border-color: #22d3ee;
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
   }
 
-  /* GRADIENTE */
-  .overlay {
-    position: absolute;
-    inset: 0;
-    /* Gradiente muy oscuro abajo para asegurar lectura */
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.6) 50%, transparent 100%);
-    z-index: 1;
+  .depto-card:hover::before {
+    transform: scale(1.05);
+    filter: brightness(0.3);
   }
 
-  /* CONTENIDO */
+  /* 4. CONTENIDO */
   .content {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    
-    /* ESTA ES LA SOLUCIÓN AL CORTE DERECHO: */
-    box-sizing: border-box; 
-    
-    /* Ajusté un poco el padding para que no quede tan apretado */
-    padding: 1.5rem; 
-    
+    box-sizing: border-box;
+    padding: 1.5rem;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    z-index: 2;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 20%, transparent 100%);
   }
 
   .icono {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6));
   }
 
   h3 {
     font-size: 1.6rem;
-    font-weight: 800;
-    color: #fbbf24;
-    margin: 0; /* Quitamos margen extra para evitar problemas */
-    line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    font-weight: 700;
+    color: #22d3ee !important;
+    margin: 0;
+    text-transform: uppercase;
   }
 
   p {
-    font-size: 1rem;
-    color: #ffffff;
+    font-size: 0.95rem;
+    color: #e4e4e7;
     margin: 0;
-    line-height: 1.5;
-    font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
-    display: block; /* Asegura que se vea */
+  }
+
+  /* --- ARREGLO PARA CELULARES --- */
+  @media (max-width: 768px) {
+    
+    .grid-deptos {
+        /* Una sola columna en el celular */
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+        gap: 1.5rem;
+    }
+
+    .depto-card {
+        /* Altura fija reducida para evitar zoom excesivo */
+        height: 220px !important; 
+    }
+
+    .depto-card::before {
+        /* Centrar la imagen normalmente */
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+
+    /* Ajuste de texto para espacio reducido */
+    .content {
+        padding: 1rem !important;
+        flex-direction: row; /* Icono al lado para ahorrar espacio vertical */
+        align-items: center;
+        gap: 1rem;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 40%, transparent 100%);
+    }
+
+    .icono {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .textos {
+        text-align: left;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.2rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+        line-height: 1.2;
+        /* Limita el texto a 2 líneas para que no tape la foto */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
   }
 </style>

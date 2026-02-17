@@ -1,68 +1,238 @@
+---
+/* Eventos.astro */
+---
 <section id="eventos">
-    <h2>Próximos Eventos</h2>
-    <div class="timeline">
+    <div class="container">
         
-        <div class="evento-item">
-            <div class="fecha">
-                <span class="dia">15</span>
-                <span class="mes">MAR</span>
-            </div>
-            <div class="info">
-                <h3>Vigilia Regional</h3>
-                <p>📍 Iglesia de Maipú - 22:00 hrs</p>
-                <p class="detalle"></p>
-            </div>
+        <div class="titulo-seccion">
+            <h2>Próximos Eventos</h2>
+            <p>Agenda Regional</p>
         </div>
 
-        <div class="evento-item">
-            <div class="fecha">
-                <span class="dia">02</span>
-                <span class="mes">ABR</span>
-            </div>
-            <div class="info">
-                <h3>Campamento Regional</h3>
-                <p>📍 Iglesia de Curacaví - 10:00 hrs</p>
-                <p class="detalle"></p>
-            </div>
-        </div>
+        <div class="timeline">
+            
+            <div class="evento-card">
+                <div class="fecha-box">
+                    <span class="dia">15</span>
+                    <span class="mes">MAR</span>
+                </div>
+                
+                <div class="info-evento">
+                    <h3>Vigilia Regional</h3>
+                    <div class="detalles">
+                        <span class="dato">
+                            <span class="icono">📍</span> Iglesia de Maipú
+                        </span>
+                        <span class="dato">
+                            <span class="icono">⏰</span> 22:00 hrs
+                        </span>
+                    </div>
+                </div>
 
+                <div class="action">
+                    <span class="btn-ver">Ver Info &rarr;</span>
+                </div>
+            </div>
+
+            <div class="evento-card">
+                <div class="fecha-box">
+                    <span class="dia">02</span>
+                    <span class="mes">ABR</span>
+                </div>
+                
+                <div class="info-evento">
+                    <h3>Campamento Regional</h3>
+                    <div class="detalles">
+                        <span class="dato">
+                            <span class="icono">📍</span> Iglesia de Curacaví
+                        </span>
+                        <span class="dato">
+                            <span class="icono">⛺</span> 10:00 hrs
+                        </span>
+                    </div>
+                </div>
+
+                <div class="action">
+                    <span class="btn-ver">Ver Info &rarr;</span>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 
 <style>
-    #eventos { padding: 80px 20px; background-color: #1f2937; color: white; text-align: center; }
-    h2 { margin-bottom: 50px; font-size: 2.5rem; }
-
-    .timeline { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-
-    .evento-item {
-        display: flex;
-        background: rgba(255,255,255,0.1);
-        border-radius: 12px;
-        padding: 20px;
-        align-items: center;
-        text-align: left;
-        transition: transform 0.2s;
+    /* 1. SECCIÓN */
+    #eventos {
+        padding: 6rem 1rem;
+        background-color: transparent; /* Transparente para ver el fondo global */
     }
-    .evento-item:hover { transform: scale(1.02); background: rgba(255,255,255,0.15); }
 
-    .fecha {
-        background: #2563eb;
-        padding: 15px;
-        border-radius: 8px;
+    .container {
+        max-width: 900px; /* Un poco más angosto para que se vea como lista */
+        margin: 0 auto;
+    }
+
+    /* 2. TÍTULOS */
+    .titulo-seccion {
         text-align: center;
-        min-width: 70px;
-        margin-right: 20px;
+        margin-bottom: 3rem;
     }
-    .dia { display: block; font-size: 1.8rem; font-weight: bold; line-height: 1; }
-    .mes { display: block; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; }
 
-    .info h3 { margin: 0 0 5px 0; font-size: 1.4rem; color: white; }
-    .info p { margin: 0; color: #d1d5db; font-size: 1rem; }
-    .info .detalle { font-size: 0.9rem; color: #9ca3af; margin-top: 5px; }
+    h2 { 
+        font-size: 3rem; 
+        color: #22d3ee !important; /* Cyan Brillante */
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
 
+    .titulo-seccion p {
+        color: #a1a1aa;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* 3. TIMELINE (Lista de Tarjetas) */
+    .timeline { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 1.5rem; 
+    }
+
+    /* 4. TARJETA DE EVENTO (Estilo Ticket Tech) */
+    .evento-card {
+        display: flex;
+        align-items: center;
+        background-color: #27272a; /* Zinc 800 */
+        border: 1px solid #3f3f46; /* Borde sutil inicial */
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Efecto Hover */
+    .evento-card:hover {
+        transform: translateX(10px); /* Se mueve a la derecha */
+        border-color: #22d3ee; /* Borde se enciende */
+        box-shadow: 0 4px 20px rgba(0, 140, 158, 0.2);
+        background-color: #202024; /* Un poco más oscuro */
+    }
+
+    /* 5. CAJA DE FECHA (Gradiente llamativo) */
+    .fecha-box {
+        background: linear-gradient(135deg, #008C9E, #22d3ee);
+        padding: 1rem;
+        border-radius: 12px;
+        text-align: center;
+        min-width: 80px;
+        margin-right: 1.5rem;
+        box-shadow: 0 0 15px rgba(34, 211, 238, 0.4); /* Glow de la fecha */
+        color: #0f172a; /* Texto oscuro sobre fondo brillante para contraste */
+    }
+
+    .dia { 
+        display: block; 
+        font-size: 2rem; 
+        font-weight: 800; 
+        line-height: 1;
+        color: #ffffff !important;
+    }
+    
+    .mes { 
+        display: block; 
+        font-size: 0.85rem; 
+        font-weight: 700; 
+        text-transform: uppercase;
+        margin-top: 2px;
+        color: #ffffff !important;
+    }
+
+    /* 6. INFORMACIÓN DEL EVENTO */
+    .info-evento {
+        flex-grow: 1;
+    }
+
+    .info-evento h3 { 
+        margin: 0 0 0.5rem 0; 
+        font-size: 1.5rem; 
+        color: #ffffff !important;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .detalles {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .dato {
+        color: #d4d4d8; /* Gris claro */
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .icono {
+        filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+    }
+
+    /* 7. BOTÓN/ACCIÓN (Flecha a la derecha) */
+    .action {
+        margin-left: 1rem;
+        opacity: 0; /* Invisible al principio */
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .btn-ver {
+        color: #22d3ee;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    /* Al pasar el mouse sobre la tarjeta, aparece la flecha */
+    .evento-card:hover .action {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* RESPONSIVE (Celulares) */
     @media (max-width: 600px) {
-        .evento-item { flex-direction: column; text-align: center; }
-        .fecha { margin-right: 0; margin-bottom: 15px; width: 100%; }
+        .evento-card { 
+            flex-direction: column;
+            text-align: center; 
+            padding: 2rem 1.5rem;
+            gap: 1rem;
+        }
+        
+        .fecha-box { 
+            margin-right: 0; 
+            min-width: 100px;
+        }
+
+        .detalles {
+            justify-content: center;
+            gap: 0.8rem;
+            flex-direction: column;
+        }
+
+        .action {
+            opacity: 1; /* En celular siempre visible */
+            transform: none;
+            margin-top: 1rem;
+            margin-left: 0;
+        }
+        
+        .evento-card:hover {
+            transform: translateY(-5px); /* En celular sube en vez de ir al lado */
+        }
     }
 </style>

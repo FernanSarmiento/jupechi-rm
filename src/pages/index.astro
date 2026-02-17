@@ -1,5 +1,4 @@
 ---
-
 import Footer from "./components/Footer.astro";
 import Navegation from "./components/Navegation.astro";
 import Noticias from "./components/Noticias.astro";
@@ -7,15 +6,19 @@ import Contacto from "./components/Contacto.astro";
 import Directorio from "./components/Directorio.astro";
 import Departamentos from "./components/Departamentos.astro";
 import Eventos from "./components/Eventos.astro";
-
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Jupechi RM</title>
 	</head>
@@ -23,50 +26,56 @@ import Eventos from "./components/Eventos.astro";
 		<Navegation />
     
     	<div class="hero-section">
-			  <img src="/images/logo rm.png" alt="Logo Jupechi RM" class="hero-logo" width="80px" height="80px"/>
-			  <h1 class="hero-title">Juventud Región Metropolitana</h1>
-			  <p class="hero-subtitle">JUPECHI RM</p>
-			  <div class="hero-buttons">
-				  <a href="#eventos" class="btn-outline">📅 Próximos Eventos</a>
-				  <a href="#directorio" class="btn-outline">👥 Conoce al Directorio</a>
-			  </div>
-			  <div class="hero-social">
-				  <a href="https://www.facebook.com/jupechirm" target="_blank" aria-label="Facebook">
-					  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-				  </a>
-				  <a href="https://www.instagram.com/jupechi_rm/" target="_blank" aria-label="Instagram">
-					  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-				  </a>
-				  <a href="https://www.youtube.com/@GrupoComunicacioness" target="_blank" aria-label="YouTube">
-					  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-				  </a>
-			  </div>
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
+                <img src="/images/logo rm.png" alt="Logo Jupechi RM" class="hero-logo"/>
+                
+                <h1 class="hero-title">Juventud <span class="highlight">RM</span></h1>
+                <p class="hero-subtitle">Conectados con el Propósito</p>
+                
+                <div class="hero-buttons">
+                    <a href="#eventos" class="btn-primary">
+                        📅 Ver Agenda
+                    </a>
+                    <a href="#directorio" class="btn-secondary">
+                        👥 Nuestro Equipo
+                    </a>
+                </div>
+
+                <div class="hero-social">
+                    <a href="https://www.facebook.com/jupechirm" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/jupechi_rm/" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@GrupoComunicacioness" target="_blank" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                </div>
+
+                <div class="scroll-down">
+                    <span>Descubre Más</span>
+                    <div class="arrow">↓</div>
+                </div>
+            </div>
 		</div>
 
-    <Directorio />
-
-    <Departamentos />
-
-    <Eventos />
-
-    <Noticias />
-
-    <Contacto />
-
+        <Directorio />
+        <Departamentos />
+        <Eventos />
+        <Noticias />
+        <Contacto />
 		<Footer />
 	</body>
 </html>
 
-
-
-<!-- ESTILO CSS -->
- <style>
+<style>
+    /* Estilos base */
     html, body {
-        font-family: sans-serif;
         min-height: 100vh;
-        /* display: flex;  <--- BORRADO */
-        /* flex-direction: column; <--- BORRADO */
-        display: block; /* <--- AGREGADO: Esto es lo estándar y seguro */
+        display: block;
         margin: 0;
         padding: 0;
         overflow-x: hidden;
@@ -74,150 +83,220 @@ import Eventos from "./components/Eventos.astro";
         max-width: 100vw;
     }
 
-  img, iframe, video {
-    max-width: 100%; /* Que nunca sean más grandes que su contenedor */
-    height: auto;
-}
-
-
-
-	/* Estilos del Hero Section */
-  .hero-section {
-    /* ALTURA: Que ocupe casi toda la pantalla al empezar (80% del alto) */
-    height: 100vh; 
-    
-    /* EL TRUCO DEL FONDO OSCURO: */
-    /* Es una capa de color negro al 70% de opacidad (rgba 0,0,0,0.7) ENCIMA de la foto */
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/images/fondo rm.jpg'); /* <- CAMBIA ESTO POR TU NOMBRE DE FOTO */
-      
-    /* Asegura que la foto cubra todo el espacio sin deformarse */
-    background-size: cover;
-    background-position: center;
-    
-    /* CENTRADO: Usamos Flexbox para poner todo al medio */
-    display: flex;
-    flex-direction: column; /* Uno debajo del otro */
-    justify-content: center; /* Centrado vertical */
-    align-items: center;     /* Centrado horizontal */
-    text-align: center;
-    color: white; /* Texto blanco */
-  }
-
-
-
-  /* Estilos para el Logo dentro del Hero */
-  .hero-logo {
-    width: 250px;
-	height: 250px; /* Ajusta este tamaño según tu logo */
-    margin-bottom: 20px;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase; /* Letras mayúsculas */
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    opacity: 0.9; /* Un poco más suave que el título */
-  }
-
-  /* Contenedor de los botones para que no estén pegados */
-  .hero-buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px; /* Separación entre botones */
-  }
-
-
-
-  /* El estilo del botón elegante */
-  .btn-outline {
-    text-decoration: none;
-    color: white;
-    border: 2px solid white; /* Borde blanco */
-    padding: 10px 25px;      /* Relleno: 10px arriba/abajo, 25px lados */
-    border-radius: 50px;     /* Bordes muy redondos (tipo cápsula) */
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: all 0.3s ease; /* Para que el cambio de color sea suave */
-  }
-
-  /* Efecto al pasar el mouse (Hover) */
-  .btn-outline:hover {
-    background-color: skyblue;
-    color: black; /* El texto se vuelve negro para leerse sobre blanco */
-    transform: scale(1.05); /* Crece un poquito */
-  }
-
-
-
-  /* Contenedor de las redes */
-  .hero-social {
-    margin-top: 35px; /* Separación de los botones */
-    display: flex;
-    gap: 25px; /* Espacio entre cada ícono */
-  }
-
-  /* Estilo de los enlaces (el área clickable) */
-  .hero-social a {
-    color: rgba(255, 255, 255, 0.8); /* Blanco un pelín transparente */
-    transition: all 0.3s ease;
-    display: flex; /* Para que el SVG esté centrado */
-  }
-
-  /* Efecto al pasar el mouse (Hover) */
-  .hero-social a:hover {
-    color: skyblue; /* Blanco puro */
-    transform: translateY(-3px); /* Flota un poquito hacia arriba */
-  }
-
-  /* Hacemos los íconos un poco más grandes que el texto normal */
-  .hero-social svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  /* ... tus estilos normales ... */
-
-/* ESTO ES LO NUEVO PARA CELULARES */
-@media (max-width: 874px) {
-    
-    /* CORREGIDO: Usamos .hero-section en vez de #hero */
+	/* HERO SECTION RENOVADO */
     .hero-section {
+        height: 100vh; /* Pantalla completa */
+        position: relative;
+        display: flex;
         align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 0 20px;
-        height: auto; /* Permite que crezca si es necesario */
-        min-height: 100vh;
-        padding-top: 100px; /* Espacio para que el menú no tape el logo */
-        padding-bottom: 50px;
+        color: white;
+        background-color: #0f172a; /* Color de carga por si falla la imagen */
     }
 
-    /* Ajustamos el tamaño del título */
+    /* Capa de fondo con imagen */
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('/images/fondo rm.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.4); /* Oscurece la imagen para que el texto resalte */
+        z-index: 1;
+    }
+
+    /* Contenido (Encima de la imagen) */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
+        max-width: 800px;
+    }
+
+    .hero-logo {
+        width: 180px;
+        height: 180px; 
+        margin-bottom: 1.5rem;
+        filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.4)); /* Glow celeste en el logo */
+        animation: float 6s ease-in-out infinite; /* Flota suavemente */
+    }
+
     .hero-title {
-        font-size: 2.2rem;
-        line-height: 1.1;
+        font-size: 4rem; /* Título gigante */
+        font-weight: 800;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        line-height: 1;
+        color: white !important;
     }
 
-    /* CORREGIDO: Usamos .hero-buttons en vez de .botones */
+    .highlight {
+        color: #22d3ee !important; /* "RM" en celeste brillante */
+        text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: #cbd5e1;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    /* BOTONES MODERNOS */
     .hero-buttons {
-        flex-direction: column; /* Pone los botones uno bajo el otro */
-        gap: 15px;
-        width: 100%; 
+        margin-top: 2.5rem;
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    /* CORREGIDO: Usamos .btn-outline en vez de .btn */
-    .btn-outline {
-        width: 100%; /* Botón ancho completo */
-        display: block; /* Para que tome el ancho */
-        box-sizing: border-box; /* Para que el padding no rompa el ancho */
+    .btn-primary {
+        background-color: #22d3ee;
+        color: #0f172a !important; /* Texto oscuro */
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); /* Glow */
+        transition: all 0.3s ease;
     }
-}
+
+    .btn-primary:hover {
+        background-color: #ffffff;
+        transform: scale(1.05);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: white !important;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        backdrop-filter: blur(5px); /* Efecto vidrio */
+        transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        border-color: #22d3ee;
+        color: #22d3ee !important;
+        background-color: rgba(34, 211, 238, 0.1);
+    }
+
+    /* REDES SOCIALES */
+    .hero-social {
+        margin-top: 2.5rem;
+        display: flex;
+        gap: 20px;
+    }
+
+    .hero-social a {
+        color: rgba(255, 255, 255, 0.6);
+        transition: all 0.3s ease;
+    }
+
+    .hero-social a:hover {
+        color: #22d3ee;
+        transform: scale(1.2);
+    }
+
+    .hero-social svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* INDICADOR DE SCROLL */
+    .scroll-down {
+        position: absolute;
+        bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        opacity: 0.7;
+        animation: bounce 2s infinite;
+    }
+
+    .scroll-down span {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* ANIMACIONES */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .hero-title { font-size: 3rem; }
+        .hero-subtitle { font-size: 1.2rem; }
+        .hero-buttons { flex-direction: column; width: 100%; gap: 1rem; }
+        .btn-primary, .btn-secondary { width: 100%; box-sizing: border-box; text-align: center; }
+    }
+</style>
+
+<style is:global>
+  :root {
+    --fondo-principal: #18181b; 
+    --texto-principal: #a1a1aa; 
+    --color-titulos: #22d3ee;   
+    --acento: #a855f7;
+  }
+
+  html {
+    font-family: 'Outfit', system-ui, sans-serif;
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    scroll-behavior: smooth;
+  }
+
+  body { margin: 0; padding: 0; }
+
+  /* Títulos */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-titulos) !important;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+  }
+
+  /* Textos */
+  p, li, span, div {
+    color: var(--texto-principal);
+    line-height: 1.6;
+  }
+
+  /* Enlaces */
+  a {
+    color: #e4e4e7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--color-titulos);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  }
+
+  /* Reset Botones */
+  button, .btn { color: #ffffff !important; }
 </style>
