@@ -114,7 +114,7 @@
     }
 
     .container {
-        max-width: 900px; /* Un poco más angosto para que se vea como lista */
+        max-width: 900px; 
         margin: 0 auto;
     }
 
@@ -140,19 +140,19 @@
         text-transform: uppercase;
     }
 
-    /* TIMELINE (Lista de Tarjetas) */
+    /* TIMELINE */
     .timeline { 
         display: flex; 
         flex-direction: column; 
         gap: 1.5rem; 
     }
 
-    /* TARJETA DE EVENTO (Estilo Ticket Tech) */
+    /* TARJETA DE EVENTO */
     .evento-card {
         display: flex;
         align-items: center;
-        background-color: #27272a; /* Zinc 800 */
-        border: 1px solid #3f3f46; /* Borde sutil inicial */
+        background-color: #27272a; 
+        border: 1px solid #3f3f46; 
         border-radius: 16px;
         padding: 1.5rem;
         transition: all 0.3s ease;
@@ -162,13 +162,13 @@
 
     /* Efecto Hover */
     .evento-card:hover {
-        transform: translateX(10px); /* Se mueve a la derecha */
-        border-color: #22d3ee; /* Borde se enciende */
+        transform: translateX(10px); 
+        border-color: #22d3ee; 
         box-shadow: 0 4px 20px rgba(0, 140, 158, 0.2);
-        background-color: #202024; /* Un poco más oscuro */
+        background-color: #202024; 
     }
 
-    /* CAJA DE FECHA (Gradiente llamativo) */
+    /* CAJA DE FECHA */
     .fecha-box {
         background: linear-gradient(135deg, #008C9E, #22d3ee);
         padding: 1rem;
@@ -176,8 +176,8 @@
         text-align: center;
         min-width: 80px;
         margin-right: 1.5rem;
-        box-shadow: 0 0 15px rgba(34, 211, 238, 0.4); /* Glow de la fecha */
-        color: #0f172a; /* Texto oscuro sobre fondo brillante para contraste */
+        box-shadow: 0 0 15px rgba(34, 211, 238, 0.4); 
+        color: #0f172a; 
     }
 
     .dia { 
@@ -228,7 +228,7 @@
         filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
     }
 
-    /* BOTÓN/ACCIÓN (Flecha a la derecha) */
+    /* BOTÓN/ACCIÓN */
     .action {
         margin-left: 1rem;
         opacity: 0; /* Invisible al principio */
@@ -243,7 +243,6 @@
         text-transform: uppercase;
     }
 
-    /* Al pasar el mouse sobre la tarjeta, aparece la flecha */
     .evento-card:hover .action {
         opacity: 1;
         transform: translateX(0);
@@ -270,14 +269,14 @@
         }
 
         .action {
-            opacity: 1; /* En celular siempre visible */
+            opacity: 1;
             transform: none;
             margin-top: 1rem;
             margin-left: 0;
         }
         
         .evento-card:hover {
-            transform: translateY(-5px); /* En celular sube en vez de ir al lado */
+            transform: translateY(-5px); 
         }
     }
 </style>

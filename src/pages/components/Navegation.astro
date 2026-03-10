@@ -20,17 +20,17 @@
         z-index: 10;
         
         padding: 20px 5%; 
-        box-sizing: border-box; /* Importante para que respete el ancho */
+        box-sizing: border-box;
 
         display: flex;
-        justify-content: center; /* Centrado en pantallas grandes */
+        justify-content: center;
         align-items: center;
     }
 
     .links {
         display: flex;
         gap: 30px; /* Separación entre enlaces */
-        flex-wrap: wrap; /* Permite que bajen si no caben */
+        flex-wrap: wrap; 
         justify-content: center;
     }
 
@@ -47,12 +47,12 @@
         color: skyblue;
     }
 
-    /* RESPONSIVE: AJUSTE PARA CELULARES */
+    /* AJUSTE PARA CELULARES */
     @media (max-width: 768px) {
         nav {
-            padding: 15px; /* Menos espacio en celular */
-            position: relative; /* En celular, que no flote sobre la foto para no tapar */
-            background-color: #1f2937; /* Fondo oscuro en celular para que se lea */
+            padding: 15px; 
+            position: relative; 
+            background-color: #1f2937; 
         }
         
         .links {
