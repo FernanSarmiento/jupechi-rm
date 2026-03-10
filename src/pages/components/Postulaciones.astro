@@ -8,16 +8,17 @@
             <div class="glow-effect"></div>
             
             <div class="content">
-                <span class="badge">Próximamente</span>
+                <span class="badge activa">¡Postulaciones Abiertas!</span>
                 <h2>¿Quieres servir con nosotros?</h2>
-                <p class="fechas">Las postulaciones para los departamentos abren en:</p>
+                
+                <p class="fechas">Únete a nuestros equipos de trabajo durante el mes de:</p>
                 <div class="meses">
                     <span class="mes">MARZO</span>
                 </div>
-                <p class="bajada">Si tienes el deseo de trabajar para el Señor en la región, prepárate. ¡Pronto liberaremos el formulario!</p>
+                <p class="bajada">Si tienes el deseo de trabajar para el Señor en la región, este es tu momento. ¡Completa el formulario y sé parte de lo que Dios está haciendo!</p>
                 
-                <a href="#" class="btn-postular disabled">
-                    <span>Atento a las Redes</span>
+                <a href="AQUI_VA_TU_LINK" target="_blank" class="btn-postular">
+                    <span>Ir al Formulario</span>
                 </a>
             </div>
 
@@ -39,14 +40,14 @@
 
     /* TARJETA PRINCIPAL */
     .cta-card {
-        background-color: #0f172a; /* Fondo oscuro */
-        border: 2px solid #22d3ee; /* Borde Cyan Brillante */
+        background-color: #0f172a;
+        border: 2px solid #22d3ee;
         border-radius: 24px;
         padding: 3rem 2rem;
         text-align: center;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 0 40px rgba(34, 211, 238, 0.15); /* Resplandor suave */
+        box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
     }
 
     /* EFECTO DE FONDO (Glow) */
@@ -71,9 +72,9 @@
         gap: 1.5rem;
     }
 
-    /* ETIQUETA "PRÓXIMAMENTE" */
+    /* ETIQUETA ACTIVA */
     .badge {
-        background-color: rgba(34, 211, 238, 0.1);
+        background-color: rgba(34, 211, 238, 0.2);
         color: #22d3ee;
         border: 1px solid #22d3ee;
         padding: 0.5rem 1.5rem;
@@ -82,6 +83,7 @@
         text-transform: uppercase;
         font-size: 0.85rem;
         letter-spacing: 2px;
+        box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
     }
 
     h2 {
@@ -117,11 +119,11 @@
         line-height: 1.6;
     }
 
-    /* BOTÓN */
+    /* BOTÓN ACTIVO NEÓN */
     .btn-postular {
         margin-top: 1rem;
         background-color: #22d3ee;
-        color: #0f172a;
+        color: #0f172a !important;
         padding: 1rem 3rem;
         border-radius: 50px;
         font-weight: 800;
@@ -133,20 +135,13 @@
         overflow: hidden;
     }
 
-    /* Estado "Deshabilitado" (Para cuando aún no hay link) */
-    .btn-postular.disabled {
-        background-color: #334155;
-        color: #94a3b8;
-        cursor: not-allowed;
-    }
-
-    /* Si quieres activar el botón, quítale la clase 'disabled' y usa esto: */
-    /*
+    /* EFECTO HOVER ACTIVADO */
     .btn-postular:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 30px rgba(34, 211, 238, 0.5);
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+        background-color: #ffffff;
+        color: #0f172a !important;
     }
-    */
 
     @keyframes rotate {
         from { transform: rotate(0deg); }

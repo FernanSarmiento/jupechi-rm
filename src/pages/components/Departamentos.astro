@@ -16,7 +16,12 @@
         <div class="content">
           <div class="icono">📸</div>
           <h3>Comunicaciones</h3>
-          <p>Difusión del Evangelio y RRSS</p>
+          <p class="desc">Difusión del Evangelio y RRSS</p>
+          
+          <div class="liderazgo">
+             <p><strong>Director:</strong> Director</p>
+             <p><strong>Subdirector:</strong> Subdirector</p>
+          </div>
         </div>
       </div>
 
@@ -25,7 +30,12 @@
         <div class="content">
           <div class="icono">💃</div>
           <h3>Danza</h3>
-          <p>Adoración a Dios a través de la danza</p>
+          <p class="desc">Adoración a Dios a través de la danza</p>
+          
+          <div class="liderazgo">
+             <p><strong>Director:</strong> Director</p>
+             <p><strong>Subdirector:</strong> Subdirector</p>
+          </div>
         </div>
       </div>
 
@@ -34,25 +44,27 @@
         <div class="content">
           <div class="icono">👔</div>
           <h3>Protocolo</h3>
-          <p>Recepción, orden y excelencia</p>
+          <p class="desc">Recepción, orden y excelencia</p>
+          
+          <div class="liderazgo">
+             <p><strong>Director:</strong> Director</p>
+             <p><strong>Subdirector:</strong> Subdirector</p>
+          </div>
         </div>
       </div>
 
-      <div class="depto-card">
-        <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80" alt="Visitadores" class="fondo-img">
-        <div class="content">
-          <div class="icono">❤️</div>
-          <h3>Visitadores</h3>
-          <p>Amor, compañía y oración a cada casa</p>
-        </div>
-      </div>
 
       <div class="depto-card">
         <img src="/images/deptos/capaz.jpg" alt="Capacitación" class="fondo-img">
         <div class="content">
           <div class="icono">📖</div>
           <h3>Capacitación</h3>
-          <p>Fundamento bíblico y enseñanza</p>
+          <p class="desc">Fundamento bíblico y enseñanza</p>
+          
+          <div class="liderazgo">
+             <p><strong>Director:</strong> Director</p>
+             <p><strong>Subdirector:</strong> Subdirector</p>
+          </div>
         </div>
       </div>
 
@@ -61,7 +73,12 @@
         <div class="content">
           <div class="icono">🎵</div>
           <h3>Conjunto Musical</h3>
-          <p>Guiando en alabanza y adoración</p>
+          <p class="desc">Guiando en alabanza y adoración</p>
+          
+          <div class="liderazgo">
+             <p><strong>Director:</strong> Director</p>
+             <p><strong>Subdirector:</strong> Subdirector</p>
+          </div>
         </div>
       </div>
 
@@ -70,7 +87,12 @@
         <div class="content">
           <div class="icono">🔥</div>
           <h3>Evangelismo</h3>
-          <p>Llevando el mensaje de salvación</p>
+          <p class="desc">Llevando el mensaje de salvación</p>
+          
+          <div class="liderazgo">
+             <p><strong>Director:</strong> Director</p>
+             <p><strong>Subdirector:</strong> Subdirector</p>
+          </div>
         </div>
       </div>
 
@@ -98,10 +120,10 @@
   /* TARJETA BASE */
   .depto-card {
     position: relative;
-    height: 350px;
+    height: 360px; /* Quizás debas subir a 380px o 400px si los nombres son muy largos */
     border-radius: 16px;
-    overflow: hidden; /* Esto recorta la imagen si se sale */
-    background-color: #0f172a; /* Fondo azul oscuro por defecto */
+    overflow: hidden; 
+    background-color: #0f172a; 
     border: 1px solid #008C9E;
     box-shadow: 0 4px 20px rgba(0, 140, 158, 0.15);
     transition: all 0.4s ease;
@@ -113,9 +135,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    
-    object-fit: cover; 
-    
+    object-fit: cover;
     z-index: 0;
     filter: brightness(0.6);
     transition: transform 0.5s ease, filter 0.5s ease;
@@ -123,7 +143,6 @@
 
   /* HOVER PC */
   .depto-card:hover { transform: translateY(-5px); border-color: #22d3ee; box-shadow: 0 0 25px rgba(34, 211, 238, 0.4); }
-  
   .depto-card:hover .fondo-img { transform: scale(1.05); filter: brightness(0.4); }
 
   /* CONTENIDO */
@@ -138,7 +157,31 @@
 
   .icono { font-size: 2.5rem; margin-bottom: 0.5rem; filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6)); }
   h3 { font-size: 1.6rem; font-weight: 700; color: #22d3ee !important; margin: 0; text-transform: uppercase; }
-  p { font-size: 0.95rem; color: #e4e4e7; margin: 0; }
+  
+  /* ESTILO DE LA DESCRIPCIÓN ORIGINAL */
+  p.desc { font-size: 0.95rem; color: #e4e4e7; margin: 0; }
+
+  /* --- ESTILOS PARA EL LIDERAZGO --- */
+  .liderazgo {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+  }
+
+  .liderazgo p {
+    font-size: 0.85rem; 
+    color: #e4e4e7;
+    margin: 0;
+  }
+
+  .liderazgo strong {
+    color: #22d3ee; 
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
 
   @media (max-width: 768px) {
 
@@ -150,29 +193,21 @@
     
     .grid-deptos {
         grid-template-columns: 1fr !important;
-    }
-    
-    .grid-deptos {
-        grid-template-columns: 1fr !important;
         padding: 0 10px;
         gap: 1.5rem;
     }
 
     .depto-card {
-        height: 300px !important; 
+        height: auto !important; /* Cambiamos a auto para que crezca según el texto */
+        min-height: 320px;
     }
 
     .fondo-img {
         height: auto !important; 
-        
         width: 100% !important;
-        
-        /* Pegada arriba */
         top: 0 !important;
-        
         object-fit: contain !important;
         object-position: top center !important;
-        
         filter: brightness(0.9) !important;
     }
 
@@ -180,9 +215,11 @@
     .content {
         padding: 1rem !important;
         background: linear-gradient(to top, #0f172a 40%, transparent 100%) !important;
+        position: relative; /* Ajuste para celular con altura auto */
+        margin-top: 50%; /* Empuja el contenido hacia abajo de la foto */
     }
 
     h3 { font-size: 1.4rem; }
-    p { font-size: 0.9rem; }
+    p.desc { font-size: 0.9rem; }
   }
 </style>
