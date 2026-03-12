@@ -1,0 +1,195 @@
+---
+import Navegation from "../pages/components/Navegation.astro";
+import Footer from "../pages/components/Footer.astro";
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo rm.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Postulaciones - Jupechi RM</title>
+</head>
+<body>
+    <Navegation />
+
+    <div class="espaciador-nav"></div>
+
+    <main class="form-section">
+        <div class="container">
+            <div class="titulo-seccion">
+                <h1>Únete al <span class="highlight">Equipo</span></h1>
+                <p>Completa el formulario a continuación para ser parte de lo que Dios está haciendo en la Región Metropolitana.</p>
+            </div>
+
+            <div class="iframe-card">
+                <div class="glow-effect"></div>
+                
+                <iframe 
+                    src="https://forms.gle/yDQgA8bjXGPaPkcc7?embedded=true" 
+                    width="100%" 
+                    height="900" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    class="formulario-google">
+                    Cargando formulario...
+                </iframe>
+
+            </div>
+            
+            <div class="volver">
+                <a href="/" class="btn-volver">← Volver al Inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</body>
+</html>
+
+<style>
+    /* ESPACIADOR PARA EL HEADER FIJO */
+    .espaciador-nav {
+        height: 80px; 
+    }
+
+    .form-section {
+        padding: 4rem 1rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .titulo-seccion {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        color: white !important;
+        margin: 0 0 0.5rem 0;
+        line-height: 1.1;
+    }
+
+    .highlight {
+        color: #22d3ee !important;
+        text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: #cbd5e1;
+    }
+
+    /* TARJETA DEL FORMULARIO */
+    .iframe-card {
+        background-color: #0f172a;
+        border: 1px solid #22d3ee;
+        border-radius: 16px;
+        padding: 10px; /* Un poco de padding para que respire */
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+    }
+
+    .glow-effect {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(34, 211, 238, 0.05) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .formulario-google {
+        position: relative;
+        z-index: 2;
+        border-radius: 8px;
+        background-color: transparent;
+    }
+
+    /* BOTÓN VOLVER */
+    .volver {
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    .btn-volver {
+        color: #94a3b8;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid transparent;
+    }
+
+    .btn-volver:hover {
+        color: #22d3ee;
+        border-color: #22d3ee;
+        background-color: rgba(34, 211, 238, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 2.5rem; }
+        .iframe-card { padding: 0; border-radius: 12px; }
+        .formulario-google { height: 1100px; /* Los forms en celular suelen ser más largos */ }
+    }
+</style>
+
+<style is:global>
+  /* Traemos TODOS los estilos globales exactos del index */
+  :root {
+    --fondo-principal: #18181b; 
+    --texto-principal: #a1a1aa; 
+    --color-titulos: #22d3ee;   
+    --acento: #a855f7;
+  }
+
+  html {
+    font-family: 'Outfit', system-ui, sans-serif;
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    scroll-behavior: smooth;
+  }
+
+  body { margin: 0; padding: 0; }
+
+  /* Títulos */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-titulos) !important;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+  }
+
+  /* Textos */
+  p, li, span, div {
+    color: var(--texto-principal);
+    line-height: 1.6;
+  }
+
+  /* Enlaces (ESTO ARREGLA EL PROBLEMA MORADO) */
+  a {
+    color: #e4e4e7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--color-titulos);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  }
+
+  /* Reset Botones */
+  button, .btn { color: #ffffff !important; }
+</style>
