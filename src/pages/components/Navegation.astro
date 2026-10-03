@@ -1,5 +1,12 @@
 <nav class="nav-links">
-    <div class="links">
+    <div class="nav-mobile-bar">
+        <span class="nav-logo-text">Jupechi RM</span>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span class="menu-icon"></span>
+        </button>
+    </div>
+
+    <div class="links" id="nav-links">
         <a href="/">Inicio</a>
         <a href="#eventos">Eventos</a>
         <a href="#departamentos">Departamentos</a>
@@ -27,6 +34,10 @@
         align-items: center;
     }
 
+    .nav-mobile-bar {
+        display: none;
+    }
+
     .links {
         display: flex;
         gap: 30px; /* Separación entre enlaces */
@@ -43,21 +54,143 @@
         text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para leer mejor sobre la foto */
     }
 
-    .links a:hover {
-        color: skyblue;
+    @media (hover: hover) and (pointer: fine) {
+        .links a:hover {
+            color: #4fb3e8;
+        }
     }
 
-    /* AJUSTE PARA CELULARES */
+    .links a:active {
+        color: #4fb3e8;
+    }
+
+    /* AJUSTE PARA CELULARES: MENÚ HAMBURGUESA */
     @media (max-width: 768px) {
         nav {
-            padding: 15px; 
-            position: relative; 
-            background-color: #1f2937; 
+            padding: 15px 20px;
+            flex-direction: column;
+            align-items: stretch;
+            position: relative;
+            background-color: var(--fondo-principal, #0d1826);
         }
-        
+
+        .nav-mobile-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-logo-text {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid #4fb3e8;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 18px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: #4fb3e8;
+            transition: all 0.3s ease;
+        }
+
+        .menu-icon {
+            position: relative;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+
+        .menu-icon::before {
+            top: -6px;
+        }
+
+        .menu-icon::after {
+            top: 6px;
+        }
+
+        .menu-toggle.abierto .menu-icon {
+            background-color: transparent;
+        }
+
+        .menu-toggle.abierto .menu-icon::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+
+        .menu-toggle.abierto .menu-icon::after {
+            top: 0;
+            transform: rotate(-45deg);
+        }
+
         .links {
-            gap: 15px;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            max-height: 0;
+            overflow: hidden;
             font-size: 0.9rem;
+            margin-top: 0;
+            transition: max-height 0.35s ease, margin-top 0.35s ease;
+        }
+
+        .links.abierto {
+            max-height: 500px;
+            margin-top: 15px;
+        }
+
+        .links a {
+            padding: 14px 5px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .links a:last-child {
+            border-bottom: none;
         }
     }
 </style>
+
+<script>
+    const boton = document.getElementById("menu-toggle");
+    const menu = document.getElementById("nav-links");
+
+    if (boton && menu) {
+        boton.addEventListener("click", () => {
+            const abierto = menu.classList.toggle("abierto");
+            boton.classList.toggle("abierto", abierto);
+            boton.setAttribute("aria-expanded", String(abierto));
+        });
+
+        menu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("abierto");
+                boton.classList.remove("abierto");
+                boton.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+</script>

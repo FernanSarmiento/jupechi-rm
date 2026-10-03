@@ -34,17 +34,22 @@
                 </div>
             </div>
 
-            <div class="evento-card">
+            <div class="evento-card destacado">
                 <div class="fecha-box">
                     <span class="dia">17</span>
                     <span class="mes">OCT</span>
                 </div>
-                
+
+                <a href="/images/eventos/ojos-que-ven-afiche.jpg" target="_blank" class="afiche-thumb">
+                    <img src="/images/eventos/ojos-que-ven-afiche.jpg" alt="Afiche Ojos que ven - Masivo Regional Juvenil" />
+                </a>
+
                 <div class="info-evento">
-                    <h3>Masivo Regional</h3>
+                    <span class="badge-destacado">Próximo Masivo</span>
+                    <h3>Ojos que ven</h3>
                     <div class="detalles">
                         <span class="dato">
-                            <span class="icono">📍</span> Iglesia de Estación Central
+                            <span class="icono">📍</span> Ipechi Santa Ana
                         </span>
                         <span class="dato">
                             <span class="icono">⏰</span> 18:00 hrs
@@ -126,15 +131,15 @@
 
     h2 { 
         font-size: 3rem; 
-        color: #22d3ee !important; /* Cyan Brillante */
+        color: #4fb3e8 !important; /* Cyan Brillante */
         font-weight: 800;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
-        text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+        text-shadow: 0 0 20px rgba(79, 179, 232, 0.3);
     }
 
     .titulo-seccion p {
-        color: #a1a1aa;
+        color: #b8cbe0;
         font-size: 1.2rem;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -151,8 +156,8 @@
     .evento-card {
         display: flex;
         align-items: center;
-        background-color: #27272a; 
-        border: 1px solid #3f3f46; 
+        background-color: #152a3d; 
+        border: 1px solid #2c5f82; 
         border-radius: 16px;
         padding: 1.5rem;
         transition: all 0.3s ease;
@@ -160,24 +165,71 @@
         overflow: hidden;
     }
 
+    .evento-card.destacado {
+        border: 2px solid #4fb3e8;
+        box-shadow: 0 0 30px rgba(79, 179, 232, 0.25);
+        background: linear-gradient(135deg, #152a3d, #0d1826);
+    }
+
+    .afiche-thumb {
+        flex-shrink: 0;
+        width: 70px;
+        height: 88px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-right: 1.5rem;
+        border: 1px solid rgba(79, 179, 232, 0.4);
+        display: block;
+    }
+
+    .afiche-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .afiche-thumb:hover img {
+            transform: scale(1.08);
+        }
+    }
+
+    .badge-destacado {
+        display: inline-block;
+        background-color: rgba(79, 179, 232, 0.15);
+        color: #4fb3e8;
+        border: 1px solid #4fb3e8;
+        padding: 0.2rem 0.8rem;
+        border-radius: 50px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.4rem;
+    }
+
     /* Efecto Hover */
-    .evento-card:hover {
-        transform: translateX(10px); 
-        border-color: #22d3ee; 
-        box-shadow: 0 4px 20px rgba(0, 140, 158, 0.2);
-        background-color: #202024; 
+    @media (hover: hover) and (pointer: fine) {
+        .evento-card:hover {
+            transform: translateX(10px); 
+            border-color: #4fb3e8; 
+            box-shadow: 0 4px 20px rgba(44, 95, 130, 0.2);
+            background-color: #202024; 
+        }
     }
 
     /* CAJA DE FECHA */
     .fecha-box {
-        background: linear-gradient(135deg, #008C9E, #22d3ee);
+        background: linear-gradient(135deg, #2c5f82, #4fb3e8);
         padding: 1rem;
         border-radius: 12px;
         text-align: center;
         min-width: 80px;
         margin-right: 1.5rem;
-        box-shadow: 0 0 15px rgba(34, 211, 238, 0.4); 
-        color: #0f172a; 
+        box-shadow: 0 0 15px rgba(79, 179, 232, 0.4); 
+        color: #0a1929; 
     }
 
     .dia { 
@@ -237,15 +289,17 @@
     }
 
     .btn-ver {
-        color: #22d3ee;
+        color: #4fb3e8;
         font-weight: 600;
         font-size: 0.9rem;
         text-transform: uppercase;
     }
 
-    .evento-card:hover .action {
-        opacity: 1;
-        transform: translateX(0);
+    @media (hover: hover) and (pointer: fine) {
+        .evento-card:hover .action {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     /* RESPONSIVE (Celulares) */
@@ -262,6 +316,12 @@
             min-width: 100px;
         }
 
+        .afiche-thumb {
+            width: 110px;
+            height: 138px;
+            margin-right: 0;
+        }
+
         .detalles {
             justify-content: center;
             gap: 0.8rem;
@@ -273,10 +333,6 @@
             transform: none;
             margin-top: 1rem;
             margin-left: 0;
-        }
-        
-        .evento-card:hover {
-            transform: translateY(-5px); 
         }
     }
 </style>

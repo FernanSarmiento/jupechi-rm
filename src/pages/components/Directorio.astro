@@ -123,15 +123,15 @@
     h2 { 
         font-size: 3rem; 
         /* Color Celeste del Logo */
-        color: #22d3ee !important; 
+        color: #4fb3e8 !important; 
         font-weight: 800;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
-        text-shadow: 0 0 20px rgba(34, 211, 238, 0.3); /* Glow suave */
+        text-shadow: 0 0 20px rgba(79, 179, 232, 0.3); /* Glow suave */
     }
 
     .bajada { 
-        color: #a1a1aa; 
+        color: #b8cbe0; 
         font-size: 1.2rem;
         font-weight: 300;
     }
@@ -144,7 +144,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         display: inline-block;
-        border-bottom: 2px solid #008C9E; /* Línea celeste abajo */
+        border-bottom: 2px solid #2c5f82; /* Línea celeste abajo */
         padding-bottom: 5px;
     }
 
@@ -159,8 +159,8 @@
 
     /* TARJETAS ESTILO "TECH" */
     .lider-card {
-        background-color: #27272a; /* Gris oscuro (Zinc 800) */
-        border: 1px solid #008C9E; /* Borde del color del Logo */
+        background-color: #152a3d; /* Gris oscuro (Zinc 800) */
+        border: 1px solid #2c5f82; /* Borde del color del Logo */
         border-radius: 16px;
         padding: 2.5rem 1.5rem;
         
@@ -174,10 +174,22 @@
         overflow: hidden;
     }
 
-    .lider-card:hover { 
-        transform: translateY(-8px); 
-        border-color: #22d3ee; /* Se pone Cyan brillante */
-        box-shadow: 0 0 30px rgba(34, 211, 238, 0.25); /* Glow Neón */
+    .lider-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #4fb3e8, #a855f7, transparent);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .lider-card:hover { 
+            transform: translateY(-8px); 
+            border-color: #4fb3e8; /* Se pone Cyan brillante */
+            box-shadow: 0 0 30px rgba(79, 179, 232, 0.25); /* Glow Neón */
+        }
     }
 
     /* FOTO DE PERFIL */
@@ -188,15 +200,17 @@
         overflow: hidden;
         
         /* Anillo de luz alrededor de la foto */
-        border: 3px solid #008C9E;
-        box-shadow: 0 0 15px rgba(0, 140, 158, 0.4);
+        border: 3px solid #2c5f82;
+        box-shadow: 0 0 15px rgba(44, 95, 130, 0.4);
         transition: all 0.3s ease;
     }
 
-    .lider-card:hover .foto-circle {
-        border-color: #22d3ee;
-        transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(34, 211, 238, 0.6); /* Brilla más al hover */
+    @media (hover: hover) and (pointer: fine) {
+        .lider-card:hover .foto-circle {
+            border-color: #4fb3e8;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(79, 179, 232, 0.6); /* Brilla más al hover */
+        }
     }
 
     img { 
@@ -218,11 +232,16 @@
     }
     
     .cargo { 
-        color: #22d3ee; /* Cargo en Cyan Brillante */
-        font-weight: 600; 
+        display: inline-block;
+        color: #4fb3e8;
+        background-color: rgba(79, 179, 232, 0.1);
+        border: 1px solid rgba(79, 179, 232, 0.3);
+        font-weight: 700; 
         text-transform: uppercase; 
-        font-size: 0.9rem; 
+        font-size: 0.75rem; 
         letter-spacing: 1px;
+        padding: 3px 12px;
+        border-radius: 50px;
         margin: 0 0 0.5rem 0;
     }
 

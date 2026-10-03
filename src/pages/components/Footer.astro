@@ -74,8 +74,8 @@
         padding-top: 4rem;
         font-size: 0.95rem;
         /* Borde superior Tech */
-        border-top: 1px solid #008C9E; 
-        box-shadow: 0 -10px 30px rgba(0, 140, 158, 0.1); /* Resplandor hacia arriba */
+        border-top: 1px solid #2c5f82; 
+        box-shadow: 0 -10px 30px rgba(44, 95, 130, 0.1); /* Resplandor hacia arriba */
     }
 
     .footer-container {
@@ -94,7 +94,7 @@
     }
 
     h3 {
-        color: #22d3ee !important; /* Títulos en Cyan Brillante */
+        color: #4fb3e8 !important; /* Títulos en Cyan Brillante */
         font-size: 1.2rem;
         margin-bottom: 1.5rem;
         text-transform: uppercase;
@@ -138,16 +138,24 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: #27272a;
+        background-color: #152a3d;
         border: 1px solid #3f3f46;
     }
 
-    .social-links a:hover {
-        background-color: #008C9E;
+    @media (hover: hover) and (pointer: fine) {
+        .social-links a:hover {
+            background-color: #2c5f82;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(44, 95, 130, 0.6); /* Glow al pasar mouse */
+            border-color: #2c5f82;
+        }
+    }
+
+    .social-links a:active {
+        background-color: #2c5f82;
         color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 0 15px rgba(0, 140, 158, 0.6); /* Glow al pasar mouse */
-        border-color: #008C9E;
+        border-color: #2c5f82;
     }
 
     .links {
@@ -165,10 +173,16 @@
         display: inline-block;
     }
 
-    .links a:hover {
-        color: #22d3ee; /* Celeste neón */
-        transform: translateX(5px); /* Se mueve a la derecha */
-        text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+    @media (hover: hover) and (pointer: fine) {
+        .links a:hover {
+            color: #4fb3e8; /* Celeste neón */
+            transform: translateX(5px); /* Se mueve a la derecha */
+            text-shadow: 0 0 8px rgba(79, 179, 232, 0.4);
+        }
+    }
+
+    .links a:active {
+        color: #4fb3e8;
     }
 
 
@@ -190,21 +204,27 @@
         text-align: center;
         font-size: 0.85rem;
         color: #52525b;
-        border-top: 1px solid #27272a;
+        border-top: 1px solid #152a3d;
     }
 
     .barra-final p { margin: 5px 0; color: #6b7280; }
 
     .dev a {
-        color: #008C9E;
+        color: #2c5f82;
         text-decoration: none;
         font-weight: bold;
         transition: color 0.3s;
     }
 
-    .dev a:hover {
-        color: #22d3ee;
-        text-decoration: underline;
+    @media (hover: hover) and (pointer: fine) {
+        .dev a:hover {
+            color: #4fb3e8;
+            text-decoration: underline;
+        }
+    }
+
+    .dev a:active {
+        color: #4fb3e8;
     }
 
     .corazon { color: #ef4444; animation: beat 1.5s infinite; }

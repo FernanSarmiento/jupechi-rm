@@ -1,0 +1,274 @@
+---
+/* BuscadorSala.astro */
+/* Componente temporal para el masivo "Ojos que ven" (17 de octubre).
+   Se puede quitar de index.astro después del evento. */
+---
+<section id="buscador-sala">
+    <div class="container">
+
+        <div class="titulo-seccion">
+            <span class="etiqueta">Ojos que ven · 17 Octubre</span>
+            <h2>¿A qué grupo voy?</h2>
+            <p>Escribe tu nombre completo para ver tu sala asignada</p>
+        </div>
+
+        <div class="buscador-card">
+            <div class="buscador-input-row">
+                <input
+                    type="text"
+                    id="input-nombre-sala"
+                    placeholder="Escribe tu nombre completo..."
+                    autocomplete="off"
+                />
+                <button type="button" id="btn-buscar-sala">Buscar</button>
+            </div>
+
+            <div id="resultado-busqueda-sala" class="resultado"></div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    #buscador-sala {
+        padding: 6rem 1rem;
+        background-color: transparent;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .titulo-seccion {
+        margin-bottom: 2.5rem;
+    }
+
+    .etiqueta {
+        display: inline-block;
+        color: #4fb3e8;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+        color: #ffffff !important;
+        font-weight: 800;
+        margin: 0 0 0.5rem 0;
+        text-transform: uppercase;
+        text-shadow: 0 0 20px rgba(79, 179, 232, 0.3);
+    }
+
+    .titulo-seccion p {
+        color: #b8cbe0;
+        font-size: 1.05rem;
+    }
+
+    .buscador-card {
+        background-color: #152a3d;
+        border: 1px solid #2c5f82;
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .buscador-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #4fb3e8, #a855f7, transparent);
+    }
+
+    .buscador-input-row {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    #input-nombre-sala {
+        flex: 1;
+        min-width: 200px;
+        padding: 0.9rem 1.2rem;
+        border-radius: 50px;
+        border: 1px solid #2c5f82;
+        background-color: #0d1826;
+        color: #ffffff;
+        font-size: 1rem;
+        font-family: inherit;
+    }
+
+    #input-nombre-sala:focus {
+        outline: none;
+        border-color: #4fb3e8;
+    }
+
+    #btn-buscar-sala {
+        background-color: #4fb3e8;
+        color: #0d1826;
+        border: none;
+        padding: 0.9rem 2rem;
+        border-radius: 50px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        #btn-buscar-sala:hover {
+            background-color: #ffffff;
+            transform: scale(1.03);
+        }
+    }
+
+    #btn-buscar-sala:active {
+        background-color: #ffffff;
+        transform: scale(0.97);
+    }
+
+    @media (max-width: 600px) {
+        h2 { font-size: 2rem; }
+        .buscador-card { padding: 1.5rem; }
+        .buscador-input-row { flex-direction: column; }
+        #btn-buscar-sala { width: 100%; }
+    }
+</style>
+
+<!--
+  Estilos del resultado en un bloque GLOBAL (no encerrado/scoped).
+  Esto es necesario porque el HTML del resultado lo crea JavaScript
+  después de que la página ya cargó, y los estilos "scoped" de Astro
+  solo se aplican al contenido que existía al momento de construir el sitio.
+-->
+<style is:global>
+    #buscador-sala .resultado {
+        margin-top: 1.5rem;
+        text-align: left;
+    }
+
+    #buscador-sala .resultado:empty {
+        margin-top: 0;
+    }
+
+    #buscador-sala .resultado-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        background-color: rgba(79, 179, 232, 0.08);
+        border: 1px solid rgba(79, 179, 232, 0.3);
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    #buscador-sala .resultado-nombre {
+        color: #ffffff;
+        font-weight: 600;
+    }
+
+    #buscador-sala .resultado-grupo {
+        flex-shrink: 0;
+        background-color: #4fb3e8;
+        color: #0d1826;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+    }
+
+    #buscador-sala .mensaje-estado {
+        color: #b8cbe0;
+        font-size: 0.95rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    #buscador-sala .mensaje-error {
+        color: #f87171;
+    }
+</style>
+
+<script>
+    // Pega aquí la URL de tu Google Sheet publicada como CSV (ver instrucciones)
+    const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosGrqolB2cPiJbdSAwBET6IoO23laBgs4pruGAwqzkTsYkW2ZnunJO0EcY2QiwA/pub?gid=1809932289&single=true&output=csv";
+
+    const input = document.getElementById("input-nombre-sala");
+    const boton = document.getElementById("btn-buscar-sala");
+    const resultadoDiv = document.getElementById("resultado-busqueda-sala");
+
+    let datosCache = null;
+
+    function normalizar(texto) {
+        return texto
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+    }
+
+    async function cargarDatos() {
+        if (datosCache) return datosCache;
+
+        const res = await fetch(CSV_URL);
+        const texto = await res.text();
+
+        const filas = texto.trim().split("\n").slice(1); // salta el encabezado
+        datosCache = filas
+            .map((fila) => {
+                const [nombre, grupo] = fila.split(",");
+                return { nombre: nombre?.trim(), grupo: grupo?.trim() };
+            })
+            .filter((p) => p.nombre && p.grupo);
+
+        return datosCache;
+    }
+
+    async function buscar() {
+        const consultaOriginal = input.value.trim();
+        const consulta = normalizar(consultaOriginal);
+
+        if (!consulta) return;
+
+        resultadoDiv.innerHTML = `<p class="mensaje-estado">Buscando...</p>`;
+
+        try {
+            const lista = await cargarDatos();
+            const coincidencias = lista.filter((p) => normalizar(p.nombre).includes(consulta));
+
+            if (coincidencias.length === 0) {
+                resultadoDiv.innerHTML = `<p class="mensaje-estado">No encontramos a "${consultaOriginal}". Revisa que esté bien escrito, o consulta directamente con el equipo de coordinación.</p>`;
+                return;
+            }
+
+            resultadoDiv.innerHTML = coincidencias
+                .map(
+                    (p) =>
+                        `<div class="resultado-item"><span class="resultado-nombre">${p.nombre}</span><span class="resultado-grupo">Grupo ${p.grupo}</span></div>`
+                )
+                .join("");
+        } catch (error) {
+            resultadoDiv.innerHTML = `<p class="mensaje-estado mensaje-error">Hubo un problema al cargar los datos. Intenta de nuevo en unos segundos.</p>`;
+        }
+    }
+
+    if (boton && input) {
+        boton.addEventListener("click", buscar);
+        input.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") buscar();
+        });
+    }
+</script>

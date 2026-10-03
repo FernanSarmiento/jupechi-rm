@@ -54,15 +54,15 @@
 
   h2 {
     font-size: 3rem;
-    color: #22d3ee !important; /* Cyan Brillante */
+    color: #4fb3e8 !important; /* Cyan Brillante */
     font-weight: 800;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    text-shadow: 0 0 20px rgba(79, 179, 232, 0.3);
   }
 
   .titulo-seccion p {
-    color: #a1a1aa;
+    color: #b8cbe0;
     font-size: 1.2rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -78,23 +78,29 @@
 
   /* TARJETAS */
   .dato-item {
-    background: #27272a;
+    background: #152a3d;
     padding: 3rem 2rem;
     border-radius: 20px;
     flex: 1;
     min-width: 280px;
     max-width: 400px;
     
-    border: 1px solid #008C9E; /* Borde Cyan base */
+    border: 1px solid #2c5f82; /* Borde Cyan base */
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
   }
 
-  .dato-item:hover {
-    transform: translateY(-8px);
-    border-color: #22d3ee;
-    box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+  @media (hover: hover) and (pointer: fine) {
+    .dato-item:hover {
+      transform: translateY(-8px);
+      border-color: #4fb3e8;
+      box-shadow: 0 0 30px rgba(79, 179, 232, 0.2);
+    }
+
+    .dato-item:hover .icon-glow {
+      transform: scale(1.1); /* El icono crece un poco */
+    }
   }
 
   /* ICONOS */
@@ -103,10 +109,6 @@
     margin-bottom: 1.5rem;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
     transition: transform 0.3s ease;
-  }
-
-  .dato-item:hover .icon-glow {
-    transform: scale(1.1); /* El icono crece un poco */
   }
 
   h3 {
@@ -143,23 +145,37 @@
     color: #25D366;
   }
 
-  .whatsapp:hover {
+  @media (hover: hover) and (pointer: fine) {
+    .whatsapp:hover {
+      background-color: #25D366;
+      color: #052e16; /* Texto oscuro para contraste */
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); /* Glow Verde */
+    }
+  }
+
+  .whatsapp:active {
     background-color: #25D366;
-    color: #052e16; /* Texto oscuro para contraste */
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); /* Glow Verde */
+    color: #052e16;
   }
 
   /* Estilo Correo */
   .correo {
     background-color: transparent;
-    border: 2px solid #22d3ee;
-    color: #22d3ee;
+    border: 2px solid #4fb3e8;
+    color: #4fb3e8;
   }
 
-  .correo:hover {
-    background-color: #22d3ee;
-    color: #0f172a; /* Texto oscuro */
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.5); /* Glow Cyan */
+  @media (hover: hover) and (pointer: fine) {
+    .correo:hover {
+      background-color: #4fb3e8;
+      color: #0a1929; /* Texto oscuro */
+      box-shadow: 0 0 20px rgba(79, 179, 232, 0.5); /* Glow Cyan */
+    }
+  }
+
+  .correo:active {
+    background-color: #4fb3e8;
+    color: #0a1929;
   }
 
   /* RESPONSIVE */

@@ -1,5 +1,10 @@
 ---
 /* Postulaciones.astro */
+
+// Cambia esto a "true" cuando se abra un nuevo ciclo de postulaciones,
+// y actualiza también el mes en el bloque de abajo.
+const postulacionesAbiertas = false;
+const mesPostulacion = "MARZO";
 ---
 <section id="postulaciones">
     <div class="container">
@@ -7,20 +12,33 @@
         <div class="cta-card">
             <div class="glow-effect"></div>
             
-            <div class="content">
-                <span class="badge activa">¡Postulaciones Abiertas!</span>
-                <h2>¿Quieres servir con nosotros?</h2>
-                
-                <p class="fechas">Únete a nuestros departamentos durante el mes de:</p>
-                <div class="meses">
-                    <span class="mes">MARZO</span>
+            {postulacionesAbiertas ? (
+                <div class="content">
+                    <span class="badge activa">¡Postulaciones Abiertas!</span>
+                    <h2>¿Quieres servir con nosotros?</h2>
+
+                    <p class="fechas">Únete a nuestros departamentos durante el mes de:</p>
+                    <div class="meses">
+                        <span class="mes">{mesPostulacion}</span>
+                    </div>
+                    <p class="bajada">Si tienes el deseo de trabajar para el Señor en la región, este es tu momento. ¡Completa el formulario y sé parte de lo que Dios está haciendo!</p>
+
+                    <a href="/postular" class="btn-postular">
+                        <span>Ir al Formulario</span>
+                    </a>
                 </div>
-                <p class="bajada">Si tienes el deseo de trabajar para el Señor en la región, este es tu momento. ¡Completa el formulario y sé parte de lo que Dios está haciendo!</p>
-                
-                <a href="/postular" class="btn-postular">
-                    <span>Ir al Formulario</span>
-                </a>
-            </div>
+            ) : (
+                <div class="content">
+                    <span class="badge cerrada">Postulaciones Cerradas</span>
+                    <h2>¿Quieres servir con nosotros?</h2>
+
+                    <p class="bajada">Por el momento no tenemos un proceso de postulación abierto. Síguenos en nuestras redes para enterarte apenas se abra un nuevo ciclo.</p>
+
+                    <a href="https://www.instagram.com/jupechi_rm/" target="_blank" class="btn-postular secundario">
+                        <span>Síguenos en Instagram</span>
+                    </a>
+                </div>
+            )}
 
         </div>
 
@@ -40,14 +58,14 @@
 
     /* TARJETA PRINCIPAL */
     .cta-card {
-        background-color: #0f172a;
-        border: 2px solid #22d3ee;
+        background-color: #0a1929;
+        border: 2px solid #4fb3e8;
         border-radius: 24px;
         padding: 3rem 2rem;
         text-align: center;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+        box-shadow: 0 0 40px rgba(79, 179, 232, 0.15);
     }
 
     /* EFECTO DE FONDO (Glow) */
@@ -57,7 +75,7 @@
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(79, 179, 232, 0.1) 0%, transparent 70%);
         animation: rotate 10s linear infinite;
         z-index: 1;
         pointer-events: none;
@@ -74,16 +92,41 @@
 
     /* ETIQUETA ACTIVA */
     .badge {
-        background-color: rgba(34, 211, 238, 0.2);
-        color: #22d3ee;
-        border: 1px solid #22d3ee;
+        background-color: rgba(79, 179, 232, 0.2);
+        color: #4fb3e8;
+        border: 1px solid #4fb3e8;
         padding: 0.5rem 1.5rem;
         border-radius: 50px;
         font-weight: 700;
         text-transform: uppercase;
         font-size: 0.85rem;
         letter-spacing: 2px;
-        box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+        box-shadow: 0 0 10px rgba(79, 179, 232, 0.3);
+    }
+
+    .badge.cerrada {
+        background-color: rgba(148, 163, 184, 0.15);
+        color: #94a3b8;
+        border: 1px solid #94a3b8;
+        box-shadow: none;
+    }
+
+    .btn-postular.secundario {
+        background-color: transparent;
+        color: #4fb3e8 !important;
+        border: 2px solid #4fb3e8;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .btn-postular.secundario:hover {
+            background-color: #4fb3e8;
+            color: #0a1929 !important;
+        }
+    }
+
+    .btn-postular.secundario:active {
+        background-color: #4fb3e8;
+        color: #0a1929 !important;
     }
 
     h2 {
@@ -106,8 +149,8 @@
         gap: 1rem;
         font-size: 2.5rem;
         font-weight: 800;
-        color: #22d3ee;
-        text-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+        color: #4fb3e8;
+        text-shadow: 0 0 15px rgba(79, 179, 232, 0.4);
     }
 
     .separador { color: #475569; }
@@ -122,8 +165,8 @@
     /* BOTÓN ACTIVO NEÓN */
     .btn-postular {
         margin-top: 1rem;
-        background-color: #22d3ee;
-        color: #0f172a !important;
+        background-color: #4fb3e8;
+        color: #0a1929 !important;
         padding: 1rem 3rem;
         border-radius: 50px;
         font-weight: 800;
@@ -136,11 +179,19 @@
     }
 
     /* EFECTO HOVER ACTIVADO */
-    .btn-postular:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+    @media (hover: hover) and (pointer: fine) {
+        .btn-postular:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(79, 179, 232, 0.6);
+            background-color: #ffffff;
+            color: #0a1929 !important;
+        }
+    }
+
+    .btn-postular:active {
+        transform: scale(0.98);
         background-color: #ffffff;
-        color: #0f172a !important;
+        color: #0a1929 !important;
     }
 
     @keyframes rotate {

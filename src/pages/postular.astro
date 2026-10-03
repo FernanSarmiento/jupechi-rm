@@ -1,6 +1,9 @@
 ---
 import Navegation from "../pages/components/Navegation.astro";
 import Footer from "../pages/components/Footer.astro";
+
+// Mantén este valor igual al de Postulaciones.astro
+const postulacionesAbiertas = false;
 ---
 
 <html lang="es">
@@ -20,24 +23,37 @@ import Footer from "../pages/components/Footer.astro";
         <div class="container">
             <div class="titulo-seccion">
                 <h1>Únete al <span class="highlight">Equipo</span></h1>
-                <p>Completa el formulario a continuación para ser parte de lo que Dios está haciendo en la Región Metropolitana.</p>
+                {postulacionesAbiertas ? (
+                    <p>Completa el formulario a continuación para ser parte de lo que Dios está haciendo en la Región Metropolitana.</p>
+                ) : (
+                    <p>Todavía no se abre un nuevo proceso de postulación.</p>
+                )}
             </div>
 
-            <div class="iframe-card">
-                <div class="glow-effect"></div>
-                
-                <iframe 
-                    src="https://forms.gle/yDQgA8bjXGPaPkcc7?embedded=true" 
-                    width="100%" 
-                    height="900" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0"
-                    class="formulario-google">
-                    Cargando formulario...
-                </iframe>
+            {postulacionesAbiertas ? (
+                <div class="iframe-card">
+                    <div class="glow-effect"></div>
 
-            </div>
+                    <iframe
+                        src="https://forms.gle/yDQgA8bjXGPaPkcc7?embedded=true"
+                        width="100%"
+                        height="900"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0"
+                        class="formulario-google">
+                        Cargando formulario...
+                    </iframe>
+
+                </div>
+            ) : (
+                <div class="cerrado-card">
+                    <p class="icono-cerrado">📋</p>
+                    <h2>No hay postulaciones abiertas</h2>
+                    <p>Por el momento no tenemos un proceso de postulación en curso. Síguenos en nuestras redes para enterarte apenas se abra un nuevo ciclo.</p>
+                    <a href="https://www.instagram.com/jupechi_rm/" target="_blank" class="btn-volver">Síguenos en Instagram</a>
+                </div>
+            )}
             
             <div class="volver">
                 <a href="/" class="btn-volver">← Volver al Inicio</a>
@@ -81,8 +97,8 @@ import Footer from "../pages/components/Footer.astro";
     }
 
     .highlight {
-        color: #22d3ee !important;
-        text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+        color: #4fb3e8 !important;
+        text-shadow: 0 0 20px rgba(79, 179, 232, 0.5);
     }
 
     p {
@@ -92,13 +108,13 @@ import Footer from "../pages/components/Footer.astro";
 
     /* TARJETA DEL FORMULARIO */
     .iframe-card {
-        background-color: #0f172a;
-        border: 1px solid #22d3ee;
+        background-color: #0a1929;
+        border: 1px solid #4fb3e8;
         border-radius: 16px;
         padding: 10px; /* Un poco de padding para que respire */
         position: relative;
         overflow: hidden;
-        box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+        box-shadow: 0 0 30px rgba(79, 179, 232, 0.15);
     }
 
     .glow-effect {
@@ -107,7 +123,7 @@ import Footer from "../pages/components/Footer.astro";
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(34, 211, 238, 0.05) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(79, 179, 232, 0.05) 0%, transparent 70%);
         pointer-events: none;
     }
 
@@ -116,6 +132,40 @@ import Footer from "../pages/components/Footer.astro";
         z-index: 2;
         border-radius: 8px;
         background-color: transparent;
+    }
+
+    /* TARJETA DE ESTADO CERRADO */
+    .cerrado-card {
+        background-color: #0a1929;
+        border: 1px solid #3f3f46;
+        border-radius: 16px;
+        padding: 3rem 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .icono-cerrado {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .cerrado-card h2 {
+        font-size: 1.8rem;
+        color: #ffffff !important;
+        margin: 0;
+    }
+
+    .cerrado-card p {
+        max-width: 500px;
+        color: #cbd5e1;
+    }
+
+    .cerrado-card .btn-volver {
+        border: 1px solid #4fb3e8;
+        margin-top: 0.5rem;
     }
 
     /* BOTÓN VOLVER */
@@ -134,10 +184,18 @@ import Footer from "../pages/components/Footer.astro";
         border: 1px solid transparent;
     }
 
-    .btn-volver:hover {
-        color: #22d3ee;
-        border-color: #22d3ee;
-        background-color: rgba(34, 211, 238, 0.1);
+    @media (hover: hover) and (pointer: fine) {
+        .btn-volver:hover {
+            color: #4fb3e8;
+            border-color: #4fb3e8;
+            background-color: rgba(79, 179, 232, 0.1);
+        }
+    }
+
+    .btn-volver:active {
+        color: #4fb3e8;
+        border-color: #4fb3e8;
+        background-color: rgba(79, 179, 232, 0.1);
     }
 
     @media (max-width: 768px) {
@@ -150,9 +208,9 @@ import Footer from "../pages/components/Footer.astro";
 <style is:global>
   /* Traemos TODOS los estilos globales exactos del index */
   :root {
-    --fondo-principal: #18181b; 
-    --texto-principal: #a1a1aa; 
-    --color-titulos: #22d3ee;   
+    --fondo-principal: #0d1826; 
+    --texto-principal: #b8cbe0; 
+    --color-titulos: #4fb3e8;   
     --acento: #a855f7;
   }
 
@@ -185,9 +243,15 @@ import Footer from "../pages/components/Footer.astro";
     transition: all 0.3s ease;
   }
 
-  a:hover {
+  @media (hover: hover) and (pointer: fine) {
+    a:hover {
+      color: var(--color-titulos);
+      text-shadow: 0 0 10px rgba(79, 179, 232, 0.5);
+    }
+  }
+
+  a:active {
     color: var(--color-titulos);
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
   }
 
   /* Reset Botones */

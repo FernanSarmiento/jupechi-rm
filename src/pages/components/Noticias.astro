@@ -81,15 +81,15 @@
 
     h2 { 
         font-size: 3rem; 
-        color: #22d3ee !important; /* Cyan Brillante */
+        color: #4fb3e8 !important; /* Cyan Brillante */
         font-weight: 800;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
-        text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+        text-shadow: 0 0 20px rgba(79, 179, 232, 0.3);
     }
 
     .titulo-seccion p {
-        color: #a1a1aa;
+        color: #b8cbe0;
         font-size: 1.2rem;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -110,8 +110,8 @@
         max-width: 500px;
         
         /* Estilo Tech */
-        background-color: #27272a; /* Zinc 800 */
-        border: 1px solid #008C9E; /* Borde Cyan base */
+        background-color: #152a3d; /* Zinc 800 */
+        border: 1px solid #2c5f82; /* Borde Cyan base */
         border-radius: 16px;
         padding: 2rem;
         position: relative;
@@ -120,10 +120,12 @@
     }
 
     /* Efecto Hover: Brillo Neón */
-    .social-card:hover {
-        transform: translateY(-5px);
-        border-color: #22d3ee;
-        box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+    @media (hover: hover) and (pointer: fine) {
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: #4fb3e8;
+            box-shadow: 0 0 30px rgba(79, 179, 232, 0.15);
+        }
     }
 
     /* CABECERA DE TARJETA */
@@ -206,11 +208,19 @@
         letter-spacing: 1px;
     }
 
-    .btn-tech-youtube:hover {
+    @media (hover: hover) and (pointer: fine) {
+        .btn-tech-youtube:hover {
+            background-color: #ef4444;
+            color: white;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); /* Glow Rojo */
+            transform: scale(1.05);
+        }
+    }
+
+    .btn-tech-youtube:active {
         background-color: #ef4444;
         color: white;
-        box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); /* Glow Rojo */
-        transform: scale(1.05);
+        transform: scale(0.98);
     }
 
     /* Regla de seguridad */

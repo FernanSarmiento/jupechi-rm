@@ -7,6 +7,7 @@ import Directorio from "./components/Directorio.astro";
 import Departamentos from "./components/Departamentos.astro";
 import Eventos from "./components/Eventos.astro";
 import Postulaciones from "./components/Postulaciones.astro";
+import BuscadorSala from "./components/BuscadorSala.astro";
 ---
 
 <html lang="es">
@@ -16,7 +17,7 @@ import Postulaciones from "./components/Postulaciones.astro";
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
 		
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
@@ -30,17 +31,23 @@ import Postulaciones from "./components/Postulaciones.astro";
             
             <div class="hero-content">
                 <img src="/images/logo rm.png" alt="Logo Jupechi RM" class="hero-logo"/>
-                
-                <h1 class="hero-title">Juventud <span class="highlight">RM</span></h1>
-                <p class="hero-subtitle">Conectados con el Propósito</p>
-                
+
+                <span class="hero-eyebrow">Masivo Regional Juvenil</span>
+                <h1 class="hero-title-evento">Ojos que ven</h1>
+
+                <p class="hero-versiculo">
+                    De oídas te conocía, ahora mis ojos te ven
+                    <span class="hero-cita">Job 42:5</span>
+                </p>
+
+                <div class="hero-fecha-badge">
+                    <span class="fecha-linea1">17 Octubre</span>
+                    <span class="fecha-linea2">Ipechi Santa Ana</span>
+                </div>
+
                 <div class="hero-buttons">
                     <a href="#eventos" class="btn-primary">
                         📅 Ver Agenda
-                    </a>
-                    
-                    <a href="#postulaciones" class="btn-accent">
-                        📝 Postular
                     </a>
 
                     <a href="#directorio" class="btn-secondary">
@@ -70,6 +77,7 @@ import Postulaciones from "./components/Postulaciones.astro";
             </div>
 		</div>
 
+        <BuscadorSala />
         <Eventos />
         <Departamentos />
         <Postulaciones />
@@ -100,7 +108,7 @@ import Postulaciones from "./components/Postulaciones.astro";
         justify-content: center;
         text-align: center;
         color: white;
-        background-color: #0f172a; /* Color de carga por si falla la imagen */
+        background-color: #0a1929; /* Color de carga por si falla la imagen */
     }
 
     /* Capa de fondo con imagen */
@@ -108,10 +116,10 @@ import Postulaciones from "./components/Postulaciones.astro";
         content: '';
         position: absolute;
         inset: 0;
-        background-image: url('/images/fondo rm.jpg');
+        background-image: url('/images/fondo-evento-ojos-que-ven.jpg');
         background-size: cover;
         background-position: center;
-        filter: brightness(0.4); /* Oscurece la imagen para que el texto resalte */
+        filter: brightness(0.65); /* La imagen ya viene oscurecida, esto solo la ajusta un poco más */
         z-index: 1;
     }
 
@@ -130,31 +138,74 @@ import Postulaciones from "./components/Postulaciones.astro";
         width: 180px;
         height: 180px; 
         margin-bottom: 1.5rem;
-        filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.4)); /* Glow celeste en el logo */
+        filter: drop-shadow(0 0 20px rgba(79, 179, 232, 0.4)); /* Glow celeste en el logo */
         animation: float 6s ease-in-out infinite; /* Flota suavemente */
     }
 
-    .hero-title {
-        font-size: 4rem; /* Título gigante */
-        font-weight: 800;
-        margin: 0;
+    .hero-eyebrow {
+        display: block;
+        font-size: 0.95rem;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: -2px;
-        line-height: 1;
-        color: white !important;
+        letter-spacing: 4px;
+        color: #d4e4f2;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     }
 
-    .highlight {
-        color: #22d3ee !important; /* "RM" en celeste brillante */
-        text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+    .hero-title-evento {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-weight: 900;
+        font-size: 6rem;
+        margin: 0.2rem 0 0 0;
+        line-height: 0.95;
+        color: #ffffff !important;
+        text-shadow: 0 0 40px rgba(79, 179, 232, 0.5);
     }
 
-    .hero-subtitle {
-        font-size: 1.5rem;
-        margin-top: 1rem;
+    .hero-versiculo {
+        margin-top: 1.5rem;
+        font-size: 1.05rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
         color: #cbd5e1;
         font-weight: 300;
+        max-width: 480px;
+        line-height: 1.6;
+    }
+
+    .hero-cita {
+        display: block;
+        margin-top: 0.4rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: #4fb3e8;
+    }
+
+    .hero-fecha-badge {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        padding: 0.8rem 2.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 50px;
+    }
+
+    .fecha-linea1 {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #ffffff !important;
+        text-transform: uppercase;
         letter-spacing: 1px;
+    }
+
+    .fecha-linea2 {
+        font-size: 0.8rem;
+        color: #cbd5e1;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
     /* BOTONES MODERNOS */
@@ -167,20 +218,27 @@ import Postulaciones from "./components/Postulaciones.astro";
     }
 
     .btn-primary {
-        background-color: #22d3ee;
-        color: #0f172a !important; /* Texto oscuro */
+        background-color: #4fb3e8;
+        color: #0a1929 !important; /* Texto oscuro */
         padding: 12px 30px;
         border-radius: 50px;
         font-weight: 700;
         text-transform: uppercase;
         text-decoration: none;
-        box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); /* Glow */
+        box-shadow: 0 0 20px rgba(79, 179, 232, 0.4); /* Glow */
         transition: all 0.3s ease;
     }
 
-    .btn-primary:hover {
+    @media (hover: hover) and (pointer: fine) {
+        .btn-primary:hover {
+            background-color: #ffffff;
+            transform: scale(1.05);
+        }
+    }
+
+    .btn-primary:active {
         background-color: #ffffff;
-        transform: scale(1.05);
+        transform: scale(0.97);
     }
 
     .btn-secondary {
@@ -196,10 +254,18 @@ import Postulaciones from "./components/Postulaciones.astro";
         transition: all 0.3s ease;
     }
 
-    .btn-secondary:hover {
-        border-color: #22d3ee;
-        color: #22d3ee !important;
-        background-color: rgba(34, 211, 238, 0.1);
+    @media (hover: hover) and (pointer: fine) {
+        .btn-secondary:hover {
+            border-color: #4fb3e8;
+            color: #4fb3e8 !important;
+            background-color: rgba(79, 179, 232, 0.1);
+        }
+    }
+
+    .btn-secondary:active {
+        border-color: #4fb3e8;
+        color: #4fb3e8 !important;
+        background-color: rgba(79, 179, 232, 0.1);
     }
 
     .btn-accent {
@@ -214,10 +280,18 @@ import Postulaciones from "./components/Postulaciones.astro";
         transition: all 0.3s ease;
     }
 
-    .btn-accent:hover {
+    @media (hover: hover) and (pointer: fine) {
+        .btn-accent:hover {
+            background-color: #ffffff;
+            color: var(--acento) !important;
+            transform: scale(1.05);
+        }
+    }
+
+    .btn-accent:active {
         background-color: #ffffff;
         color: var(--acento) !important;
-        transform: scale(1.05);
+        transform: scale(0.97);
     }
 
     /* REDES SOCIALES */
@@ -232,9 +306,16 @@ import Postulaciones from "./components/Postulaciones.astro";
         transition: all 0.3s ease;
     }
 
-    .hero-social a:hover {
-        color: #22d3ee;
-        transform: scale(1.2);
+    @media (hover: hover) and (pointer: fine) {
+        .hero-social a:hover {
+            color: #4fb3e8;
+            transform: scale(1.2);
+        }
+    }
+
+    .hero-social a:active {
+        color: #4fb3e8;
+        transform: scale(1.1);
     }
 
     .hero-social svg {
@@ -274,8 +355,11 @@ import Postulaciones from "./components/Postulaciones.astro";
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-        .hero-title { font-size: 3rem; }
-        .hero-subtitle { font-size: 1.2rem; }
+        .hero-title-evento { font-size: 3.2rem; }
+        .hero-eyebrow { font-size: 0.8rem; letter-spacing: 2px; }
+        .hero-versiculo { font-size: 0.9rem; }
+        .hero-fecha-badge { padding: 0.7rem 1.8rem; }
+        .fecha-linea1 { font-size: 1.1rem; }
         .hero-buttons { flex-direction: column; width: 100%; gap: 1rem; }
         .btn-primary, .btn-secondary, .btn-accent { width: 100%; box-sizing: border-box; text-align: center; }
     }
@@ -283,9 +367,9 @@ import Postulaciones from "./components/Postulaciones.astro";
 
 <style is:global>
   :root {
-    --fondo-principal: #18181b; 
-    --texto-principal: #a1a1aa; 
-    --color-titulos: #22d3ee;   
+    --fondo-principal: #0d1826; 
+    --texto-principal: #b8cbe0; 
+    --color-titulos: #4fb3e8;   
     --acento: #a855f7;
   }
 
@@ -318,9 +402,15 @@ import Postulaciones from "./components/Postulaciones.astro";
     transition: all 0.3s ease;
   }
 
-  a:hover {
+  @media (hover: hover) and (pointer: fine) {
+    a:hover {
+      color: var(--color-titulos);
+      text-shadow: 0 0 10px rgba(79, 179, 232, 0.5);
+    }
+  }
+
+  a:active {
     color: var(--color-titulos);
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
   }
 
   /* Reset Botones */
