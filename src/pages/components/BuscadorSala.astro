@@ -9,7 +9,7 @@
         <div class="titulo-seccion">
             <span class="etiqueta">Ojos que ven · 17 Octubre</span>
             <h2>¿A qué grupo voy?</h2>
-            <p>Escribe tu nombre completo para ver tu sala asignada</p>
+            <p>Escribe tu 1er nombre y 1er apellido para ver tu sala asignada</p>
         </div>
 
         <div class="buscador-card">
@@ -17,7 +17,7 @@
                 <input
                     type="text"
                     id="input-nombre-sala"
-                    placeholder="Escribe tu nombre completo..."
+                    placeholder="Escribe tu nombre y apellido"
                     autocomplete="off"
                 />
                 <button type="button" id="btn-buscar-sala">Buscar</button>
@@ -147,9 +147,6 @@
 
 <!--
   Estilos del resultado en un bloque GLOBAL (no encerrado/scoped).
-  Esto es necesario porque el HTML del resultado lo crea JavaScript
-  después de que la página ya cargó, y los estilos "scoped" de Astro
-  solo se aplican al contenido que existía al momento de construir el sitio.
 -->
 <style is:global>
     #buscador-sala .resultado {
@@ -203,7 +200,6 @@
 </style>
 
 <script>
-    // Pega aquí la URL de tu Google Sheet publicada como CSV (ver instrucciones)
     const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTosGrqolB2cPiJbdSAwBET6IoO23laBgs4pruGAwqzkTsYkW2ZnunJO0EcY2QiwA/pub?gid=1809932289&single=true&output=csv";
 
     const input = document.getElementById("input-nombre-sala");
